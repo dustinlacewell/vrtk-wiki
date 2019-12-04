@@ -1,0 +1,4 @@
+var namespace_zinnia_1_1_tracking_1_1_follow_1_1_operation_1_1_extraction =
+[
+    [ "ObjectDistanceComparatorEventDataExtractor", "d0/d77/class_zinnia_1_1_tracking_1_1_follow_1_1_operation_1_1_extraction_1_1_object_distance_comparator_event_data_extractor.html", "d0/d77/class_zinnia_1_1_tracking_1_1_follow_1_1_operation_1_1_extraction_1_1_object_distance_comparator_event_data_extractor" ]
+];

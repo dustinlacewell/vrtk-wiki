@@ -1,0 +1,12 @@
+* Zinnia Glossary
+  This glossary contains the descriptions of a number of concepts used throughout Zinnia.
+** Action
+   A behaviour which recieves and re-emits values of a certain
+   type. Based on the [[file:zinnia.org::Action][Action]] type, for example [[file:zinnia.org::BooleanAction][BooleanAction]].
+** Mutator
+   A behaviour whose properties, when changed, will change the
+   corresponding properties on a target behaviour.
+** Observable
+   Denotes a data-structure that emits a number of events related to
+   it. For example, the [[file:zinnia.org::GameObjectObservableList][GameObjectObservableList]] maintains a list of
+   GameObjects and emits events as items are added, removed and so on.

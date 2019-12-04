@@ -1,0 +1,22 @@
+* VRTK Wiki
+  This is a community managed wiki about the Virtual Reality Toolkit
+  by [[https://github.com/ExtendRealityLtd][ExtendRealityLtd]].
+
+** Glossary
+
+   A glossary of standard terminology used within the toolkit can be found [[file:glossary.org][here]].
+
+** Zinnia.Unity
+
+   Zinnia.Unity is a collection of single-responsibility
+   MonoBehaviours which can be composed through Unity Events and
+   Zinnia's powerful Action system to create any kind of logic your
+   game could need.
+
+*** API Documentation
+
+    The API documentation can be found at https://dustinlacewell.github.io/vrtk-wiki/zinnia-api/
+
+*** Community Documentation
+
+    The community documentation can be found at [[file:zinnia.org][here]].

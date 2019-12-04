@@ -1,0 +1,4 @@
+var namespace_zinnia_1_1_tracking_1_1_camera_rig_1_1_operation_1_1_extraction =
+[
+    [ "PlayAreaDimensionsExtractor", "d2/d41/class_zinnia_1_1_tracking_1_1_camera_rig_1_1_operation_1_1_extraction_1_1_play_area_dimensions_extractor.html", "d2/d41/class_zinnia_1_1_tracking_1_1_camera_rig_1_1_operation_1_1_extraction_1_1_play_area_dimensions_extractor" ]
+];

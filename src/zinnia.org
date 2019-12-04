@@ -1,0 +1,405 @@
+* TODO +Zinnia
+  This page is community documentation for
+  [[https://github.com/ExtendRealityLtd/Zinnia.Unity][Zinnia.Unity]],
+  a package in the VRTK family.
+
+  The generated API documentation can be found [[https://dustinlacewell.github.io/vrtk-wiki/zinnia/index.html][here]].
+
+** +Action
+   Actions recieve and emit values of a given type. In addition to
+   Unity Events, they are a primary mechanism for communication in
+   Zinnia.
+*** +Collection
+    Scripts for observing lists of action related types.
+**** ActionObservableList
+     Maintains a list of Zinnia Actions and emits events when that
+     list is changed.
+**** ActionRegistrarSourceObservableList
+     Maintains a list of [[ActionRegistrar]].ActionSource instances and
+     emits events when that list changes.
+*** Action
+    Base class for all action types.
+
+    Each action has a data-type, like float or GameObject.
+
+    - Sources: A list of other Actions which this Action listens to.
+    - UnityEvents:
+      - Activation State Changed
+      - Activated
+      - Value Changed
+      - Deactivated
+
+*** ActionRegistrar
+    Sets the sources of a target [[Action]] based on a list of other
+    Actions.
+
+    The sources of an ActionRegistar are of type `ActionSource` which
+    are a Action/GameObject pair. The GameObject is the one that
+    contains the Action.
+
+    The ActionRegistrar also maintains a list of GameObjects called
+    the `SourceLimits`. This is basically a filter. Only the
+    ActionSources that have a GameObject in this list are actually
+    added as sources to the target Action.
+
+    - Target: The Action whos sources will be set.
+    - Sources: A list of ActionSources who's Actions will be set as
+      the sources on the Target action.
+    - SourceLimits: A list of GameObjects denoting valid parent
+      GameObjects.
+
+*** AllAction
+    [[Action]] that emits a boolean when all the given actions are
+    `Action.IsActivated`.
+
+    - Actions: [[ActionObservableList]] of actions which all need to be
+      activated.
+*** AnyAction
+    [[Action]] that emits a boolean when any of the given actions are
+    `Action.IsActivated`.
+
+    - Actions: [[ActionObservableList]] of actions any of which need to be
+      activated.
+*** BooleanAction
+    [[Action]] that receives and emits booleans.
+*** FloatAction
+    [[Action]] that receives and emits floats.
+*** StateEmitter
+    An [[IProcessable]] which causes an [[Action]] to re-emit it's last value
+    each time the process is run.
+*** SurfaceChangeAction
+    [[Action]] that receives a [[SurfaceData]] current and emits when the
+    current and previous positions exceed the specified distance.
+*** ToggleAction
+    Alternates between emitting its Activated and Deactivated events
+    each time Recieve is called.
+*** Vector2Action
+    [[Action]] that recieves and emits Vector2 values.
+** +Association
+   Associations create a relation between some condition and the state
+   of items in a collection.
+
+   That is to say, some aspect of some collection of items, is
+   determined by some condition.
+
+   The only case right now is [[GameObjectsAssociation]] which relates
+   whether a collection of GameObjects are (in)active based on some
+   condition.
+*** +Collection
+**** GameObjectsAssociationObservableList
+     An observable list of [[GameObjectsAssociation]] instances.
+*** GameObjectsAssociation
+    Abstract class which references a [[GameObjectObservableList]] of
+    objects to (de)activate based on abstract boolean method
+    `ShouldBeActive`.
+*** GameObjectsAssociationActivator
+    An [[IProcessable]] which applies the action of a list of
+    [[GameObjectsAssociation]] causing their associated GameObjects to be
+    (de)activated accordingly.
+*** LoadedXrDeviceAssociation
+    (De)activates GameObjects based on whether the currently loaded XR
+    device name matches the `XrDeviceNamePattern` regular expression.
+
+    - XrDeviceNamePattern: Regular expression to match XR device names.
+** +Cast
+   Behaviours which perform raycasts.
+*** +Collection
+**** +Mutation
+***** PointsCastPropertyMutator
+      Mutates the properties of a target [[PointsCast]].
+
+      A GameObject maybe set as the `Target` using the `SetTarget`
+      method which will search for the [[PointsCast]] as either a direct,
+      descendant, or ancestor.
+*** PhysicsCast
+    A MonoBehaviour which allows for customizing the settings of a
+    Raycast at edit time in the inspector. This can be used by the
+    various casting components.
+*** PointsCast
+    Abstract [[IProcessable]] for casting components that result in points
+    along the cast.
+
+    Each subclass must implement the `DoCastPoints` method. Hits are
+    filtered through the `TargetValidity` rule.
+
+    - Origin: Starting point of the cast.
+    - PhysicsCast: An optional [[PhysicsCast]] to configure the raycast.
+    - TargetValidity: [[RuleContainer]] controlling which hits are valid.
+    - DestinationPointOverride: Override the destination location
+      point in world space.
+    - TargetHit: `RaycastHit` of the latest hit, or null.
+    - IsTargetHitValid: Whether the latest `TargetHit` is valid based
+      on `TargetValidity` rule.
+    - Points: The points along the most recent cast.
+    - EventData: The [[EventData]] for the latest cast.
+
+
+**** EventData
+     Holds data about a [[PointsCast]] event.
+
+     - HitData: `RaycastHit?` The result of the most recent
+       cast. `null` when it didn't hit anything.
+     - IsValid: Whether most recent HitData is valid based on the
+       TargetValidity rule.
+     - Points: Vector3 points along the most recent cast.
+
+*** FixedLineCast
+    A [[StraightLineCast]] except that it only checks for hits at the end
+    of the limited-distance raycast. If no hit is detected, the second
+    point returned is `null`.
+*** StraightLineCast
+    A [[PointsCast]] which performs a raycast from an origin and direction
+    to a maximum distance. It returns two points. The first point is
+    the origin. The second point is either the maximum position of the
+    line, or the location of any collider hit along the way.
+*** ParabolicLineCast
+    A [[PointsCast]] which returns the points at the origin, target, and a
+    parabolic arc of points in between.
+** TODO +Data
+*** TODO +Attribute
+**** CustomInspectorTextAttribute
+     Allows for specifing custom text in Zinnia component inspectors.
+**** MinMaxRangeAttribute
+     Allows for defining a min and max range for float fields in
+     Zinnia component inspectors.
+**** RestrictedAttribute
+     Allows for making fields non-editable in Zinnia component
+     inspectors.
+**** TypePickerAttribute
+     Allow for displaying pickers for
+     `Zinnia.Data.Type.SerializableType` fields in Zinnia component
+     inspectors.
+**** TODO UnityFlagsAttribute
+     These attributes are for annotating fields for the inspectors of
+     Zinnia components.
+*** TODO +Collection
+**** TODO +Counter
+***** TODO GameObjectObservableCounter
+***** TODO ObservableCounter
+**** TODO +List
+***** TODO BehaviourObservableList
+***** TODO DefaultObservableList
+***** TODO FloatObservableList
+***** TODO GameObjectObservableList
+***** TODO GameObjectRelationObservableList
+***** TODO ObservableList
+***** TODO SerializableTypeBehaviourObservableList
+***** TODO SerializableTypeComponentObservableList
+***** TODO StringObservableList
+***** TODO UnityObjectObservableList
+***** TODO Vector2ObservableList
+***** TODO Vector3ObservableList
+**** TODO +Stack
+***** TODO GameObjectObservableStack
+***** TODO ObservableStack
+*** TODO +Enum
+**** TODO TransformProperties
+*** TODO +Operation
+**** TODO +Extraction
+***** TODO ComponentGameObjectExtractor
+***** TODO GameObjectExtractor
+***** TODO SurfaceDataCollisionPointExtractor
+***** TODO TransformDataGAmeObjectExtractor
+***** TODO TransformDirectionExtractor
+***** TODO TransformEulerRotationExtractor
+***** TODO TransformPositionExtractor
+***** TODO TransformPropertyExtractor
+***** TODO TransformScaleExtractor
+***** TODO Vector2ComponentExtractor
+***** TODO Vector3Extractor
+**** TODO +Mutation
+***** TODO RigidbodyPropertyMutator
+***** TODO TransformEulerRotationMutator
+***** TODO TransformPositionMutator
+***** TODO TransformPropertyMutator
+***** TODO TransformScaleMutator
+*** TODO +Type
+**** TODO +Transformation
+***** TODO +Aggregation
+****** TODO CollectionAggregator
+****** TODO FloatAdder
+****** TODO FloatMultiplier
+****** TODO Vector2Multiplier
+****** TODO Vector3Multiplier
+****** TODO Vector3Subtractor
+***** TODO +Conversion
+****** TODO AngleToVector2Direction
+****** TODO BooleanToFloat
+****** TODO FloatToBoolean
+****** TODO FloatToVector2
+****** TODO FloatToVector3
+****** TODO Vector2ToAngle
+****** TODO Vector2ToFloat
+****** TODO Vector2ToVector3
+****** TODO Vector3ToFloat
+****** TODO Vector3ToVector2
+***** TODO FloatRangeValueRemapper
+***** TODO Transformer
+***** TODO Vector3MagnitudeSetter
+***** TODO Vector3Restrictor
+**** TODO FloatRange
+**** TODO HeapAllocationFreeReadOnlyList
+**** TODO SerializableType
+**** TODO SurfaceData
+**** TODO TransformData
+**** TODO Vector3State
+** TODO +Event
+*** TODO +Proxy
+**** TODO EmptyEventProxyEmitter
+**** TODO EventProxyEmitter
+**** TODO FloatEventProxyEmitter
+**** TODO GameObjectEventProxyEmitter
+**** TODO RestrictableSingleEventProxyEmitter
+**** TODO SingleEventProxyEmitter
+**** TODO SurfaceDataProxyEmitter
+**** TODO TransformDataProxyEmitter
+*** TODO BehaviourEnabledObserver
+** TODO +Extension
+*** TODO ArraySortExtensions
+*** TODO BehaviourExtensions
+*** TODO ColliderExtensions
+*** TODO ComponentExtensions
+*** TODO FloatExtensions
+*** TODO GameObjectExtensions
+*** TODO IReadOnlyCollectionExtensions
+*** TODO RuleContainerExtensions
+*** TODO TransformDataExtensions
+*** TODO TransformExtensions
+*** TODO Vector2Extensions
+*** TODO Vector3Extensions
+** TODO +Haptics
+*** TODO +Collection
+**** TODO HapticProcessObservableList
+*** TODO AudioClipHapticPulser
+*** TODO AudioSourceHapticPulser
+*** TODO HapticProcess
+*** TODO HapticProcessor
+*** TODO HapticPulser
+*** TODO RoutineHapticPulser
+*** TODO TimedHapticPulser
+*** TODO XRNodeHapticPulser
+** TODO +Pointer
+*** TODO +Operation
+**** TODO +Mutation
+***** TODO PointerElementPropertyMutator
+*** TODO ObjectPointer
+*** TODO PointerElement
+** TODO +Process
+*** TODO +Component
+**** TODO GameObjectSourceTargetProcessor
+**** TODO SourceTargetProcessor
+*** TODO +Moment
+**** TODO +Collection
+***** TODO MomentProcessObservableList
+**** TODO CompositeProcess
+**** TODO MomentProcess
+**** TODO MomentProcessor
+*** TODO EventProcess
+*** TODO IProcessable
+*** TODO ProcessContainer
+** TODO +Rule
+*** TODO +Collection
+**** TODO RuleContainerObservableList
+**** TODO RulesMatcherElementObservableList
+*** TODO ActiveInHierarchyRule
+*** TODO AllRule
+*** TODO AnyBehaviourEnabledRule
+*** TODO AnyComponentTypeRule
+*** TODO AnyLayerRule
+*** TODO AnyRule
+*** TODO AnyTagRule
+*** TODO GameObjectRule
+*** TODO IRule
+*** TODO ListContainsRule
+*** TODO NegationRule
+*** TODO Rule
+*** TODO RuleContainer
+*** TODO RulesMatcher
+** TODO +Tracking
+*** TODO +CameraRig
+**** TODO +Collection
+***** TODO LinkedAliasAssociationCollectionObservableList
+**** TODO +Operation
+***** TODO +Extraction
+****** TODO PlayAreaDimensionsExtractor
+**** TODO LinkedAliasAssocationCollection
+*** TODO +Collision
+**** TODO +Active
+***** TODO +Event
+****** TODO +Proxy
+******* TODO ActiveCollisionConsumerEventProxyEmitter
+******* TODO ActiveCollisionsContainerEventProxyEmitter
+***** TODO +Operation
+****** TODO +Extraction
+******* TODO NotifierContainerExtractor
+******* TODO NotifierTargetExtractor
+******* TODO PublisherContainerExtractor
+****** TODO NearestSorter
+****** TODO OrderReverser
+****** TODO Slicer
+***** TODO ActiveCollisionConsumer
+***** TODO ActiveCollisionPublisher
+***** TODO ActiveCollisionsContainer
+***** TODO CollisionPointContainer
+**** TODO +Event
+***** TODO +Proxy
+****** TODO CollisionNotifierEventProxyEmitter
+**** TODO CollisionIgnorer
+**** TODO CollisionNotifier
+**** TODO CollisionTracker
+*** TODO +Follow
+**** TODO +Modifier
+***** TODO +Property
+****** TODO +Position
+******* TODO RigidbodyVelocity
+******* TODO TransformPosition
+****** TODO +Rotation
+******* TODO RigidbodyAngularVelocity
+******* TODO RigidbodyForceAtPosition
+******* TODO TransformPositionDifferenceRotation
+******* TODO TransformRotation
+****** TODO +Scale
+******* TODO TransformScale
+****** TODO PropertyModifier
+***** TODO FollowModifier
+**** TODO +Operation
+***** TODO +Extraction
+****** TODO ObjectDistanceComparatorEventDataExtractor
+**** TODO ObjectDistanceComparator
+**** TODO ObjectFollower
+*** TODO +Modification
+**** TODO +Operation
+***** TODO +Extraction
+****** TODO TransformPropertyApplierEventDataExtractor
+**** TODO ComponentEnabledStateModifier
+**** TODO DirectionModifier
+**** TODO GameObjectStateMirror
+**** TODO GameObjectStateSwitcher
+**** TODO PinchScaler
+**** TODO PointNormalRotator
+**** TODO TransformPropertyApplier
+*** TODO Query
+**** TODO FacingQuery
+**** TODO ObscuranceQuery
+*** TODO +Velocity
+**** TODO +Collection
+***** TODO VelocityTrackerObservableList
+**** TODO ArtificialVelocityApplier
+**** TODO AverageVelocityEstimator
+**** TODO ComponentTrackerProxy
+**** TODO VelocityApplier
+**** TODO VelocityEmitter
+**** TODO VelocityMultiplier
+**** TODO VelocityTracker
+**** TODO VelocityTrackerProcessor
+**** TODO XRNodeVelocityEstimator
+*** TODO SurfaceLocator
+** TODO Utility
+*** TODO BeizerCurveGenerator
+*** TODO CountdownTimer
+*** TODO InterfaceContainer
+** TODO Visual
+*** TODO CameraColorOverlay
+*** TODO PointsRenderer
+
+

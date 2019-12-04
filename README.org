@@ -56,13 +56,9 @@
 
   After [[#installing-emacs]], open *src/export.el*.
 
-  There are two lisp s-exps in this file.
+  Press *Alt-x*, type "eval-buffer" and hit return.
 
-  - The first: will setup your Emacs to be a bit nicer for editing Lisp.
-  - The second: will build the site.
-
-  To run either s-exp, place the cursor after the last parenthesis of
-  the expression and hit *Ctrl-x Ctrl-e*
+  Press *Alt-x*, type "build-site" and hit return.
 
 * Building the API docs
 

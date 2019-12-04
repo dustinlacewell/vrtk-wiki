@@ -1,5 +1,6 @@
 ;; Use this to bootstrap emacs for basic lisp editing
-(progn 
+(defun setup-for-lisp ()
+  (interactive)
   (require 'package)
   (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
   (setq package-list '(lispy))
@@ -13,7 +14,8 @@
   (setq show-paren-delay 0))
 
 ;; Export org to html
-(progn
+(defun build-site ()
+  (interactive)
   (defun get-string-from-file (filePath)
     "Return filePath's file content."
     (with-temp-buffer

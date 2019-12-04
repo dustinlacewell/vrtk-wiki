@@ -87,6 +87,7 @@
   (let ((current-directory (file-name-directory (buffer-file-name)))
 	(html-head (get-string-from-file "head.html")))
     (setq org-html-preamble "<h1><a href=\"/vrtk-wiki/\">VRTK Wiki</a></h1>")
+    (setq org-export-headline-level 10)
     (setq org-publish-project-alist
 	  `(("docs"
 	     :base-directory ,current-directory

@@ -28,7 +28,7 @@
       - Value Changed
       - Deactivated
 
-    [[file:../zinnia-api/d4/dc2/class_zinnia_1_1_action_1_1_action.html][API Doc]]
+    [[file:../vrtk-wiki/zinnia-api/d4/dc2/class_zinnia_1_1_action_1_1_action.html][API Doc]]
 
 *** ActionRegistrar
     Sets the sources of a target [[Action]] based on a list of other

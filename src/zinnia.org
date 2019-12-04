@@ -1,7 +1,6 @@
 * TODO +Zinnia
-  This page is community documentation for
-  [[https://github.com/ExtendRealityLtd/Zinnia.Unity][Zinnia.Unity]],
-  a package in the VRTK family.
+  This page is community documentation for [[https://github.com/ExtendRealityLtd/Zinnia.Unity][Zinnia.Unity]], a package in
+  the VRTK family.
 
   The generated API documentation can be found [[https://dustinlacewell.github.io/vrtk-wiki/zinnia/index.html][here]].
 
@@ -28,6 +27,8 @@
       - Activated
       - Value Changed
       - Deactivated
+
+    [[/vrtk-wiki/zinnia-api/d4/dc2/class_zinnia_1_1_action_1_1_action.html][API Doc]]
 
 *** ActionRegistrar
     Sets the sources of a target [[Action]] based on a list of other

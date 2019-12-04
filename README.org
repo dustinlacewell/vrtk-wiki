@@ -54,7 +54,7 @@
 
 * Building the site  
 
-  After [[Installing Emacs]], open *src/export.el*.
+  After [[#installing-emacs]], open *src/export.el*.
 
   There are two lisp s-exps in this file.
 
@@ -66,7 +66,7 @@
 
 * Building the API docs
 
-  After [[Installing Doxygen]], open "Doxywizard".
+  After [[#installing-doxygen]], open "Doxywizard".
 
   From the *File* menu, select *Open*. Select the *Doxyfile* file from this repo.
 
@@ -82,7 +82,7 @@
 
 * Editing the Wiki
 
-  After [[Installing Emacs]], open any file within *src/* that has a
+  After [[#installing-emacs]], open any file within *src/* that has a
   *.org* extension.
 
   Org-mode documents are hierarchical, with asterisks denoting

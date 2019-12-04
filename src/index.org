@@ -15,7 +15,7 @@
 
 *** API Documentation
 
-    The API documentation can be found at https://dustinlacewell.github.io/vrtk-wiki/zinnia-api/
+    The API documentation can be found at [[https://dustinlacewell.github.io/vrtk-wiki/zinnia-api/][here]].
 
 *** Community Documentation
 

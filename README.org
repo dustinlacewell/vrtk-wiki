@@ -1,0 +1,114 @@
+* VRTK Wiki
+  This is a community managed wiki for the
+  [[https://www.vrtk.io/][Virtual Reality Toolkit]] by
+  [[https://github.com/ExtendRealityLtd/][ExtendRealityLtd]].
+
+  View it live [[https://dustinlacewell.github.io/vrtk-wiki/][here]].
+
+* Cloning this repository
+
+  Use git to clone this repository, ensuring to also clone the submodules:
+
+  #+BEGIN_SRC text
+    git clone --recurse-submodules https://github.com/dustinlacewell/vrtk-wiki.git
+  #+END_SRC
+
+* Emacs
+
+  This wiki is edited with [[https://www.gnu.org/software/emacs/][Emacs]].
+
+  Emacs is venerable editor that starts simple but offers unmatched extensibility.
+
+  One of Emacs' best features is [[https://orgmode.org/][Org-mode]].
+
+** Org-mode
+
+   Org-mode is a powerful document system with many features. You can
+   think of it like Markdown on steroids. This README is written in
+   Org-mode, and so is our user-authored wiki content.
+
+** Installing Emacs
+
+   If you're on Linux or OSX, do your thing.
+
+   Windows users can find an installer here:
+
+   http://mirrors.kernel.org/gnu/emacs/windows/emacs-26/
+
+   Download and extract the latest `emacs-26.X-x86_64.zip` or other
+   relevant to your system.
+
+* Doxygen
+
+  Doxygen is used to generate the API docs from source.
+
+** Installing Doxygen
+
+   If you're on Linux or OSX, do your thing.
+
+   Windows users can find an installer here:
+
+   http://www.doxygen.nl/download.html#srcbin
+
+   Once installed, you'll use the "Doxywizard" app from the start menu.
+
+* Building the site  
+
+  After [[Installing Emacs]], open `src/export.el`.
+
+  There are two lisp s-exps in this file.
+
+  - The first: will setup your Emacs to be a bit nicer for editing Lisp.
+  - The second: will build the site.
+
+  To run either s-exp, place the cursor after the last parenthesis of
+  the expression and hit `Ctrl-x Ctrl-e`
+
+* Building the API docs
+
+  After [[Installing Doxygen]], open "Doxywizard".
+
+  From the `File` menu, select `Open`. Select the `Doxyfile` file from this repo.
+
+  On the `Step 1` section of the UI, ensure this repository's root
+  path on your disk is specified.
+
+  On the `Step 2` section of the UI, select the `Run` tab. Click the
+  `Run doxygen` button.
+
+  This should output the following paths:
+
+  - `docs/zinnia-api/`
+
+* Editing the Wiki
+
+  After [[Installing Emacs]], open any file within `src/` that has a
+  `.org` extension.
+
+  Org-mode documents are hierarchical, with asterisks denoting
+  headers. The number of asterisks determines the header depth.
+
+  Hitting `TAB` on a header will collapse and expand it.
+
+** Creating Links
+
+   There are two kinds of links. Internal Links and External Links.
+
+   - Internal Links: link within the same document
+   - External Links: can link to other .org documents, websites, and more
+   
+*** Internal Links
+    
+    You can read how to make internal links here:
+
+    https://orgmode.org/manual/Internal-links.html
+
+*** External Links
+
+    You can read how to make external links here:
+
+    https://orgmode.org/manual/External-links.html
+
+** Building the site
+
+   To build the site follow the instructions at [[Building the site]].

@@ -35,7 +35,7 @@
 
    http://mirrors.kernel.org/gnu/emacs/windows/emacs-26/
 
-   Download and extract the latest `emacs-26.X-x86_64.zip` or other
+   Download and extract the latest *emacs-26.X-x86_64.zip* or other
    relevant to your system.
 
 * Doxygen
@@ -54,7 +54,7 @@
 
 * Building the site  
 
-  After [[Installing Emacs]], open `src/export.el`.
+  After [[Installing Emacs]], open *src/export.el*.
 
   There are two lisp s-exps in this file.
 
@@ -62,33 +62,42 @@
   - The second: will build the site.
 
   To run either s-exp, place the cursor after the last parenthesis of
-  the expression and hit `Ctrl-x Ctrl-e`
+  the expression and hit *Ctrl-x Ctrl-e*
 
 * Building the API docs
 
   After [[Installing Doxygen]], open "Doxywizard".
 
-  From the `File` menu, select `Open`. Select the `Doxyfile` file from this repo.
+  From the *File* menu, select *Open*. Select the *Doxyfile* file from this repo.
 
-  On the `Step 1` section of the UI, ensure this repository's root
+  On the *Step 1* section of the UI, ensure this repository's root
   path on your disk is specified.
 
-  On the `Step 2` section of the UI, select the `Run` tab. Click the
-  `Run doxygen` button.
+  On the *Step 2* section of the UI, select the *Run* tab. Click the
+  *Run doxygen* button.
 
   This should output the following paths:
 
-  - `docs/zinnia-api/`
+  - *docs/zinnia-api/*
 
 * Editing the Wiki
 
-  After [[Installing Emacs]], open any file within `src/` that has a
-  `.org` extension.
+  After [[Installing Emacs]], open any file within *src/* that has a
+  *.org* extension.
 
   Org-mode documents are hierarchical, with asterisks denoting
   headers. The number of asterisks determines the header depth.
 
-  Hitting `TAB` on a header will collapse and expand it.
+  Hitting *TAB* on a header will collapse and expand it.
+
+** Using Github instead of Emacs
+
+   If you only want to edit an existing file, you can actually use
+   Github. This will also let you preview your changes before saving
+   them.
+
+   Just visit the file at https://github.com/dustinlacewell/vrtk-wiki/
+   and click the pencil icon.
 
 ** Creating Links
 

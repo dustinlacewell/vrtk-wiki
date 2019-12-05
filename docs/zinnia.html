@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-12-05 Thu 16:16 -->
+<!-- 2019-12-05 Thu 16:29 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -194,13 +194,16 @@
   #table-of-contents span.tag {
       display: none;
   }
-  #content > div[class^="outline-"] span.tag {
+  
+  #content span.tag, #content span.api {
+      border: 0px;
       background-color: transparent;
   }
 
-  #content > div[class^="outline-"] span.tag span.api a {
-    display: inline-block;
-    padding: .8em;
+  #content span.tag span.api a {
+      font-size: 20px;
+      display: inline-block;
+      margin-top: -4px;
   }
 </style>
 <script>
@@ -209,9 +212,8 @@
       for (i = 0; i < headers.length; i++) {
 	  var header = $(headers[i]);
 	  var link = header.data('link');
-	  header
-	      .find('.api')
-	      .wrapInner("<a href=\"/Unity/vrtk-wiki/docs/zinnia-api" + link + "\"></a>");
+	  header.find('.api').text("🗎");
+	  header.find('.api').wrapInner("<a href=\"/Unity/vrtk-wiki/docs/zinnia-api" + link + "\"></a>");
       }
   });
 </script>
@@ -273,15 +275,15 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#org0dbc025">Zinnia</a>
 <ul>
-<li><a href="#orgaa0e17b">Action</a>
+<li><a href="#orgc5037ae">Action</a>
 <ul>
-<li><a href="#org153ce0f">Collection</a>
+<li><a href="#org9429d17">Collection</a>
 <ul>
 <li><a href="#orgac7883e">ActionObservableList</a></li>
 <li><a href="#orgfa92cbf">ActionRegistrarSourceObservableList</a></li>
 </ul>
 </li>
-<li><a href="#orgc67a83e"><span class="api-link" data-link="/d4/dc2/class_zinnia_1_1_action_1_1_action.html">Action&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
+<li><a href="#orgc12f16d"><span class="api-link" data-link="/d4/dc2/class_zinnia_1_1_action_1_1_action.html">Action&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
 <li><a href="#org02751af"><span class="api-link" data-link="/d2/dae/class_zinnia_1_1_action_1_1_action_registrar.html">ActionRegistrar&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
 <li><a href="#org1b987f9"><span class="api-link" data-link="/df/dde/class_zinnia_1_1_action_1_1_all_action.html">AllAction&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
 <li><a href="#org736b0ca"><span class="api-link" data-link="/df/dea/class_zinnia_1_1_action_1_1_any_action.html">AnyAction&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
@@ -295,7 +297,7 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#org81cdb09">Association</a>
 <ul>
-<li><a href="#org93108f8">Collection</a>
+<li><a href="#org34f18ed">Collection</a>
 <ul>
 <li><a href="#org808a206"><span class="api-link" data-link="/d8/d01/class_zinnia_1_1_association_1_1_collection_1_1_game_objects_association_observable_list.html">GameObjectsAssociationObservableList&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
 </ul>
@@ -307,9 +309,9 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#orge5fd07b">Cast</a>
 <ul>
-<li><a href="#orgb8fbea1">Collection</a>
+<li><a href="#org2b03077">Collection</a>
 <ul>
-<li><a href="#orge0ddd24">Mutation</a>
+<li><a href="#org9f05333">Mutation</a>
 <ul>
 <li><a href="#orgb527fbb"><span class="api-link" data-link="/d1/da3/class_zinnia_1_1_cast_1_1_operation_1_1_mutation_1_1_points_cast_property_mutator.html">PointsCastPropertyMutator&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
 </ul>
@@ -338,7 +340,7 @@ for the JavaScript code in this tag.
 <li><a href="#org50d24e4">UnityFlagsAttribute</a></li>
 </ul>
 </li>
-<li><a href="#org9610841">Collection</a>
+<li><a href="#orgec667d7">Collection</a>
 <ul>
 <li><a href="#orgc336194">Counter</a>
 <ul>
@@ -375,9 +377,9 @@ for the JavaScript code in this tag.
 <li><a href="#orgae561f4">TransformProperties</a></li>
 </ul>
 </li>
-<li><a href="#org675b19d">Operation</a>
+<li><a href="#org901b316">Operation</a>
 <ul>
-<li><a href="#org221a95b">Extraction</a>
+<li><a href="#org7dc0ec5">Extraction</a>
 <ul>
 <li><a href="#org807778a"><span class="api-link" data-link="/db/d86/class_zinnia_1_1_data_1_1_operation_1_1_extraction_1_1_component_game_object_extractor.html">ComponentGameObjectExtractor&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
 <li><a href="#org4929c44"><span class="api-link" data-link="/d5/d9a/class_zinnia_1_1_data_1_1_operation_1_1_extraction_1_1_game_object_extractor.html">GameObjectExtractor&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
@@ -392,7 +394,7 @@ for the JavaScript code in this tag.
 <li><a href="#org2150da7"><span class="api-link" data-link="/d5/dc9/class_zinnia_1_1_data_1_1_operation_1_1_extraction_1_1_vector3_extractor.html">Vector3Extractor&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
 </ul>
 </li>
-<li><a href="#org0c02fb6">Mutation</a>
+<li><a href="#org1f638d9">Mutation</a>
 <ul>
 <li><a href="#orgf513547"><span class="api-link" data-link="/d8/d88/class_zinnia_1_1_data_1_1_operation_1_1_mutation_1_1_rigidbody_property_mutator.html">RigidbodyPropertyMutator&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
 <li><a href="#orgf5db50e"><span class="api-link" data-link="/d7/d80/class_zinnia_1_1_data_1_1_operation_1_1_mutation_1_1_transform_euler_rotation_mutator.html">TransformEulerRotationMutator&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
@@ -425,9 +427,9 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#orgf99da25">Event</a>
+<li><a href="#orgb94c13f">Event</a>
 <ul>
-<li><a href="#orgcb04f23">Proxy</a>
+<li><a href="#orgfe45f4e">Proxy</a>
 <ul>
 <li><a href="#org10d8514"><span class="api-link" data-link="/d3/de4/class_zinnia_1_1_event_1_1_proxy_1_1_empty_event_proxy_emitter.html">EmptyEventProxyEmitter&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
 <li><a href="#org5b77d84"><span class="api-link" data-link="/d6/d15/class_zinnia_1_1_event_1_1_proxy_1_1_event_proxy_emitter.html">EventProxyEmitter&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
@@ -460,7 +462,7 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#org55a5b2a">Haptics</a>
 <ul>
-<li><a href="#org4089a3a">Collection</a>
+<li><a href="#org8676dae">Collection</a>
 <ul>
 <li><a href="#orgdcd5578"><span class="api-link" data-link="/de/de1/class_zinnia_1_1_haptics_1_1_collection_1_1_haptic_process_observable_list.html">HapticProcessObservableList&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
 </ul>
@@ -477,9 +479,9 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#orge96e9a1">Pointer</a>
 <ul>
-<li><a href="#org12364d0">Operation</a>
+<li><a href="#org0565e5d">Operation</a>
 <ul>
-<li><a href="#org5de9b83">Mutation</a>
+<li><a href="#org2c2dd1e">Mutation</a>
 <ul>
 <li><a href="#org7af0fc8"><span class="api-link" data-link="/dd/def/class_zinnia_1_1_pointer_1_1_operation_1_1_mutation_1_1_pointer_element_property_mutator.html">PointerElementPropertyMutator&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
 </ul>
@@ -500,7 +502,7 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#org5046b8f">Moment</a>
 <ul>
-<li><a href="#org9412849">Collection</a>
+<li><a href="#orgbce3340">Collection</a>
 <ul>
 <li><a href="#orgc3d1aa5"><span class="api-link" data-link="/de/db3/class_zinnia_1_1_process_1_1_moment_1_1_collection_1_1_moment_process_observable_list.html">MomentProcessObservableList&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
 </ul>
@@ -515,9 +517,9 @@ for the JavaScript code in this tag.
 <li><a href="#org8ce8730"><span class="api-link" data-link="/dd/dd5/class_zinnia_1_1_process_1_1_process_container.html">ProcessContainer&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
 </ul>
 </li>
-<li><a href="#org090a134">Rule</a>
+<li><a href="#org7b27e75">Rule</a>
 <ul>
-<li><a href="#org91d321f">Collection</a>
+<li><a href="#org056549f">Collection</a>
 <ul>
 <li><a href="#orgaa67678"><span class="api-link" data-link="/d3/d31/class_zinnia_1_1_rule_1_1_collection_1_1_rule_container_observable_list.html">RuleContainerObservableList&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
 <li><a href="#org326848e"><span class="api-link" data-link="/de/d92/class_zinnia_1_1_rule_1_1_collection_1_1_rules_matcher_element_observable_list.html">RulesMatcherElementObservableList&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
@@ -534,7 +536,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgd1ff06e"><span class="api-link" data-link="/d4/dd5/interface_zinnia_1_1_rule_1_1_i_rule.html">IRule&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
 <li><a href="#org1b74c80"><span class="api-link" data-link="/d0/d92/class_zinnia_1_1_rule_1_1_list_contains_rule.html">ListContainsRule&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
 <li><a href="#org48c36d4"><span class="api-link" data-link="/d9/d69/class_zinnia_1_1_rule_1_1_negation_rule.html">NegationRule&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
-<li><a href="#orge2eee78"><span class="api-link" data-link="/d4/dad/class_zinnia_1_1_rule_1_1_rule.html">Rule&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
+<li><a href="#org8236106"><span class="api-link" data-link="/d4/dad/class_zinnia_1_1_rule_1_1_rule.html">Rule&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
 <li><a href="#orgfd2597e"><span class="api-link" data-link="/d7/d35/class_zinnia_1_1_rule_1_1_rule_container.html">RuleContainer&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
 <li><a href="#orgb1d8828"><span class="api-link" data-link="/db/da5/class_zinnia_1_1_rule_1_1_rules_matcher.html">RulesMatcher&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
 </ul>
@@ -543,14 +545,14 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#orgd741fef">CameraRig</a>
 <ul>
-<li><a href="#orgf0466c1">Collection</a>
+<li><a href="#org6d03249">Collection</a>
 <ul>
 <li><a href="#org6d25a70"><span class="api-link" data-link="/d1/d7f/class_zinnia_1_1_tracking_1_1_camera_rig_1_1_collection_1_1_linked_alias_association_collection_observable_list.html">LinkedAliasAssociationCollectionObservableList&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
 </ul>
 </li>
-<li><a href="#org638b486">Operation</a>
+<li><a href="#org470e2f2">Operation</a>
 <ul>
-<li><a href="#org01f2d2c">Extraction</a></li>
+<li><a href="#org273b613">Extraction</a></li>
 </ul>
 </li>
 <li><a href="#org529a8c2">LinkedAliasAssocationCollection</a></li>
@@ -560,17 +562,17 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#orga72d055">Active</a>
 <ul>
-<li><a href="#org34e6806">Event</a></li>
-<li><a href="#org044d620">Operation</a></li>
+<li><a href="#orgf4cba3b">Event</a></li>
+<li><a href="#orgf1b7679">Operation</a></li>
 <li><a href="#org55c9031"><span class="api-link" data-link="/d4/d0c/class_zinnia_1_1_tracking_1_1_collision_1_1_active_1_1_active_collision_consumer.html">ActiveCollisionConsumer&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
 <li><a href="#orgcb721e4"><span class="api-link" data-link="/d7/dd9/class_zinnia_1_1_tracking_1_1_collision_1_1_active_1_1_active_collision_publisher.html">ActiveCollisionPublisher&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
 <li><a href="#org9080021"><span class="api-link" data-link="/d8/db2/class_zinnia_1_1_tracking_1_1_collision_1_1_active_1_1_active_collisions_container.html">ActiveCollisionsContainer&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
 <li><a href="#org8706b1d"><span class="api-link" data-link="/d8/dd7/class_zinnia_1_1_tracking_1_1_collision_1_1_active_1_1_collision_point_container.html">CollisionPointContainer&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
 </ul>
 </li>
-<li><a href="#orgcf30141">Event</a>
+<li><a href="#org5f71476">Event</a>
 <ul>
-<li><a href="#orgca42897">Proxy</a></li>
+<li><a href="#org3080455">Proxy</a></li>
 </ul>
 </li>
 <li><a href="#orgef81f7d"><span class="api-link" data-link="/df/de4/class_zinnia_1_1_tracking_1_1_collision_1_1_collision_ignorer.html">CollisionIgnorer&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
@@ -586,9 +588,9 @@ for the JavaScript code in this tag.
 <li><a href="#org4b565e5"><span class="api-link" data-link="/da/dec/class_zinnia_1_1_tracking_1_1_follow_1_1_modifier_1_1_follow_modifier.html">FollowModifier&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
 </ul>
 </li>
-<li><a href="#orgaf1f8cb">Operation</a>
+<li><a href="#org9641f20">Operation</a>
 <ul>
-<li><a href="#org07f2e13">Extraction</a></li>
+<li><a href="#org7cef466">Extraction</a></li>
 </ul>
 </li>
 <li><a href="#orgf03e1c0"><span class="api-link" data-link="/de/dd0/class_zinnia_1_1_tracking_1_1_follow_1_1_object_distance_comparator.html">ObjectDistanceComparator&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
@@ -597,9 +599,9 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#org601f7e4">Modification</a>
 <ul>
-<li><a href="#org50b5550">Operation</a>
+<li><a href="#org4ede9f7">Operation</a>
 <ul>
-<li><a href="#orgc5a72f0">Extraction</a></li>
+<li><a href="#orgc4c0973">Extraction</a></li>
 </ul>
 </li>
 <li><a href="#orgb1e9d12"><span class="api-link" data-link="/df/d54/class_zinnia_1_1_tracking_1_1_modification_1_1_component_enabled_state_modifier.html">ComponentEnabledStateModifier&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></a></li>
@@ -619,7 +621,7 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#orge8d8e2f">Velocity</a>
 <ul>
-<li><a href="#orgeced61c">Collection</a>
+<li><a href="#orgf6b2aef">Collection</a>
 <ul>
 <li><a href="#org6e42bfc">VelocityTrackerObservableList</a></li>
 </ul>
@@ -669,18 +671,18 @@ The generated API documentation can be found <a href="https://dustinlacewell.git
 </p>
 </div>
 
-<div id="outline-container-orgaa0e17b" class="outline-3">
-<h3 id="orgaa0e17b">Action</h3>
-<div class="outline-text-3" id="text-orgaa0e17b">
+<div id="outline-container-orgc5037ae" class="outline-3">
+<h3 id="orgc5037ae">Action</h3>
+<div class="outline-text-3" id="text-orgc5037ae">
 <p>
 Actions recieve and emit values of a given type. In addition to
 Unity Events, they are a primary mechanism for communication in
 Zinnia.
 </p>
 </div>
-<div id="outline-container-org153ce0f" class="outline-4">
-<h4 id="org153ce0f">Collection</h4>
-<div class="outline-text-4" id="text-org153ce0f">
+<div id="outline-container-org9429d17" class="outline-4">
+<h4 id="org9429d17">Collection</h4>
+<div class="outline-text-4" id="text-org9429d17">
 <p>
 Scripts for observing lists of action related types.
 </p>
@@ -712,9 +714,9 @@ emits events when that list changes.
 </div>
 </div>
 </div>
-<div id="outline-container-orgc67a83e" class="outline-4">
-<h4 id="orgc67a83e"><span class="api-link" data-link="/d4/dc2/class_zinnia_1_1_action_1_1_action.html">Action&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h4>
-<div class="outline-text-4" id="text-orgc67a83e">
+<div id="outline-container-orgc12f16d" class="outline-4">
+<h4 id="orgc12f16d"><span class="api-link" data-link="/d4/dc2/class_zinnia_1_1_action_1_1_action.html">Action&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h4>
+<div class="outline-text-4" id="text-orgc12f16d">
 <p>
 Base class for all action types.
 </p>
@@ -740,7 +742,7 @@ Each action has a data-type, like float or GameObject.
 <h4 id="org02751af"><span class="api-link" data-link="/d2/dae/class_zinnia_1_1_action_1_1_action_registrar.html">ActionRegistrar&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h4>
 <div class="outline-text-4" id="text-org02751af">
 <p>
-Sets the sources of a target <a href="#orgaa0e17b">Action</a> based on a list of other
+Sets the sources of a target <a href="#orgc5037ae">Action</a> based on a list of other
 Actions.
 </p>
 
@@ -771,7 +773,7 @@ GameObjects.</li>
 <h4 id="org1b987f9"><span class="api-link" data-link="/df/dde/class_zinnia_1_1_action_1_1_all_action.html">AllAction&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h4>
 <div class="outline-text-4" id="text-org1b987f9">
 <p>
-<a href="#orgaa0e17b">Action</a> that emits a boolean when all the given actions are
+<a href="#orgc5037ae">Action</a> that emits a boolean when all the given actions are
 `Action.IsActivated`.
 </p>
 
@@ -785,7 +787,7 @@ activated.</li>
 <h4 id="org736b0ca"><span class="api-link" data-link="/df/dea/class_zinnia_1_1_action_1_1_any_action.html">AnyAction&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h4>
 <div class="outline-text-4" id="text-org736b0ca">
 <p>
-<a href="#orgaa0e17b">Action</a> that emits a boolean when any of the given actions are
+<a href="#orgc5037ae">Action</a> that emits a boolean when any of the given actions are
 `Action.IsActivated`.
 </p>
 
@@ -799,7 +801,7 @@ activated.</li>
 <h4 id="orgfd01f90"><span class="api-link" data-link="/de/dc7/class_zinnia_1_1_action_1_1_boolean_action.html">BooleanAction&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h4>
 <div class="outline-text-4" id="text-orgfd01f90">
 <p>
-<a href="#orgaa0e17b">Action</a> that receives and emits booleans.
+<a href="#orgc5037ae">Action</a> that receives and emits booleans.
 </p>
 </div>
 </div>
@@ -807,7 +809,7 @@ activated.</li>
 <h4 id="orgaab4022"><span class="api-link" data-link="/d4/d7f/class_zinnia_1_1_action_1_1_float_action.html">FloatAction&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h4>
 <div class="outline-text-4" id="text-orgaab4022">
 <p>
-<a href="#orgaa0e17b">Action</a> that receives and emits floats.
+<a href="#orgc5037ae">Action</a> that receives and emits floats.
 </p>
 </div>
 </div>
@@ -815,7 +817,7 @@ activated.</li>
 <h4 id="org0239d69"><span class="api-link" data-link="/d7/deb/class_zinnia_1_1_action_1_1_state_emitter.html">StateEmitter&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h4>
 <div class="outline-text-4" id="text-org0239d69">
 <p>
-An <a href="#orgbcc21d9">IProcessable</a> which causes an <a href="#orgaa0e17b">Action</a> to re-emit it's last value
+An <a href="#orgbcc21d9">IProcessable</a> which causes an <a href="#orgc5037ae">Action</a> to re-emit it's last value
 each time the process is run.
 </p>
 </div>
@@ -824,7 +826,7 @@ each time the process is run.
 <h4 id="orgdc7147a"><span class="api-link" data-link="/d2/d84/class_zinnia_1_1_action_1_1_surface_change_action.html">SurfaceChangeAction&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h4>
 <div class="outline-text-4" id="text-orgdc7147a">
 <p>
-<a href="#orgaa0e17b">Action</a> that receives a <a href="#orge5b8235">SurfaceData</a> current and emits when the
+<a href="#orgc5037ae">Action</a> that receives a <a href="#orge5b8235">SurfaceData</a> current and emits when the
 current and previous positions exceed the specified distance.
 </p>
 </div>
@@ -842,7 +844,7 @@ each time Recieve is called.
 <h4 id="orga4e2005"><span class="api-link" data-link="/d4/d34/class_zinnia_1_1_action_1_1_vector2_action.html">Vector2Action&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h4>
 <div class="outline-text-4" id="text-orga4e2005">
 <p>
-<a href="#orgaa0e17b">Action</a> that recieves and emits Vector2 values.
+<a href="#orgc5037ae">Action</a> that recieves and emits Vector2 values.
 </p>
 </div>
 </div>
@@ -866,9 +868,9 @@ whether a collection of GameObjects are (in)active based on some
 condition.
 </p>
 </div>
-<div id="outline-container-org93108f8" class="outline-4">
-<h4 id="org93108f8">Collection</h4>
-<div class="outline-text-4" id="text-org93108f8">
+<div id="outline-container-org34f18ed" class="outline-4">
+<h4 id="org34f18ed">Collection</h4>
+<div class="outline-text-4" id="text-org34f18ed">
 </div>
 <div id="outline-container-org808a206" class="outline-5">
 <h5 id="org808a206"><span class="api-link" data-link="/d8/d01/class_zinnia_1_1_association_1_1_collection_1_1_game_objects_association_observable_list.html">GameObjectsAssociationObservableList&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h5>
@@ -920,13 +922,13 @@ device name matches the `XrDeviceNamePattern` regular expression.
 Behaviours which perform raycasts.
 </p>
 </div>
-<div id="outline-container-orgb8fbea1" class="outline-4">
-<h4 id="orgb8fbea1">Collection</h4>
-<div class="outline-text-4" id="text-orgb8fbea1">
+<div id="outline-container-org2b03077" class="outline-4">
+<h4 id="org2b03077">Collection</h4>
+<div class="outline-text-4" id="text-org2b03077">
 </div>
-<div id="outline-container-orge0ddd24" class="outline-5">
-<h5 id="orge0ddd24">Mutation</h5>
-<div class="outline-text-5" id="text-orge0ddd24">
+<div id="outline-container-org9f05333" class="outline-5">
+<h5 id="org9f05333">Mutation</h5>
+<div class="outline-text-5" id="text-org9f05333">
 </div>
 <div id="outline-container-orgb527fbb" class="outline-6">
 <h6 id="orgb527fbb"><span class="api-link" data-link="/d1/da3/class_zinnia_1_1_cast_1_1_operation_1_1_mutation_1_1_points_cast_property_mutator.html">PointsCastPropertyMutator&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h6>
@@ -1085,9 +1087,9 @@ Zinnia components.
 </div>
 </div>
 </div>
-<div id="outline-container-org9610841" class="outline-4">
-<h4 id="org9610841">Collection</h4>
-<div class="outline-text-4" id="text-org9610841">
+<div id="outline-container-orgec667d7" class="outline-4">
+<h4 id="orgec667d7">Collection</h4>
+<div class="outline-text-4" id="text-orgec667d7">
 </div>
 <div id="outline-container-orgc336194" class="outline-5">
 <h5 id="orgc336194">Counter</h5>
@@ -1161,13 +1163,13 @@ Zinnia components.
 <h5 id="orgae561f4">TransformProperties</h5>
 </div>
 </div>
-<div id="outline-container-org675b19d" class="outline-4">
-<h4 id="org675b19d">Operation</h4>
-<div class="outline-text-4" id="text-org675b19d">
+<div id="outline-container-org901b316" class="outline-4">
+<h4 id="org901b316">Operation</h4>
+<div class="outline-text-4" id="text-org901b316">
 </div>
-<div id="outline-container-org221a95b" class="outline-5">
-<h5 id="org221a95b">Extraction</h5>
-<div class="outline-text-5" id="text-org221a95b">
+<div id="outline-container-org7dc0ec5" class="outline-5">
+<h5 id="org7dc0ec5">Extraction</h5>
+<div class="outline-text-5" id="text-org7dc0ec5">
 </div>
 <div id="outline-container-org807778a" class="outline-6">
 <h6 id="org807778a"><span class="api-link" data-link="/db/d86/class_zinnia_1_1_data_1_1_operation_1_1_extraction_1_1_component_game_object_extractor.html">ComponentGameObjectExtractor&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h6>
@@ -1203,9 +1205,9 @@ Zinnia components.
 <h6 id="org2150da7"><span class="api-link" data-link="/d5/dc9/class_zinnia_1_1_data_1_1_operation_1_1_extraction_1_1_vector3_extractor.html">Vector3Extractor&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h6>
 </div>
 </div>
-<div id="outline-container-org0c02fb6" class="outline-5">
-<h5 id="org0c02fb6">Mutation</h5>
-<div class="outline-text-5" id="text-org0c02fb6">
+<div id="outline-container-org1f638d9" class="outline-5">
+<h5 id="org1f638d9">Mutation</h5>
+<div class="outline-text-5" id="text-org1f638d9">
 </div>
 <div id="outline-container-orgf513547" class="outline-6">
 <h6 id="orgf513547"><span class="api-link" data-link="/d8/d88/class_zinnia_1_1_data_1_1_operation_1_1_mutation_1_1_rigidbody_property_mutator.html">RigidbodyPropertyMutator&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h6>
@@ -1295,13 +1297,13 @@ Zinnia components.
 </div>
 </div>
 </div>
-<div id="outline-container-orgf99da25" class="outline-3">
-<h3 id="orgf99da25">Event</h3>
-<div class="outline-text-3" id="text-orgf99da25">
+<div id="outline-container-orgb94c13f" class="outline-3">
+<h3 id="orgb94c13f">Event</h3>
+<div class="outline-text-3" id="text-orgb94c13f">
 </div>
-<div id="outline-container-orgcb04f23" class="outline-4">
-<h4 id="orgcb04f23">Proxy</h4>
-<div class="outline-text-4" id="text-orgcb04f23">
+<div id="outline-container-orgfe45f4e" class="outline-4">
+<h4 id="orgfe45f4e">Proxy</h4>
+<div class="outline-text-4" id="text-orgfe45f4e">
 </div>
 <div id="outline-container-org10d8514" class="outline-5">
 <h5 id="org10d8514"><span class="api-link" data-link="/d3/de4/class_zinnia_1_1_event_1_1_proxy_1_1_empty_event_proxy_emitter.html">EmptyEventProxyEmitter&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h5>
@@ -1377,9 +1379,9 @@ Zinnia components.
 <h3 id="org55a5b2a">Haptics</h3>
 <div class="outline-text-3" id="text-org55a5b2a">
 </div>
-<div id="outline-container-org4089a3a" class="outline-4">
-<h4 id="org4089a3a">Collection</h4>
-<div class="outline-text-4" id="text-org4089a3a">
+<div id="outline-container-org8676dae" class="outline-4">
+<h4 id="org8676dae">Collection</h4>
+<div class="outline-text-4" id="text-org8676dae">
 </div>
 <div id="outline-container-orgdcd5578" class="outline-5">
 <h5 id="orgdcd5578"><span class="api-link" data-link="/de/de1/class_zinnia_1_1_haptics_1_1_collection_1_1_haptic_process_observable_list.html">HapticProcessObservableList&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h5>
@@ -1414,13 +1416,13 @@ Zinnia components.
 <h3 id="orge96e9a1">Pointer</h3>
 <div class="outline-text-3" id="text-orge96e9a1">
 </div>
-<div id="outline-container-org12364d0" class="outline-4">
-<h4 id="org12364d0">Operation</h4>
-<div class="outline-text-4" id="text-org12364d0">
+<div id="outline-container-org0565e5d" class="outline-4">
+<h4 id="org0565e5d">Operation</h4>
+<div class="outline-text-4" id="text-org0565e5d">
 </div>
-<div id="outline-container-org5de9b83" class="outline-5">
-<h5 id="org5de9b83">Mutation</h5>
-<div class="outline-text-5" id="text-org5de9b83">
+<div id="outline-container-org2c2dd1e" class="outline-5">
+<h5 id="org2c2dd1e">Mutation</h5>
+<div class="outline-text-5" id="text-org2c2dd1e">
 </div>
 <div id="outline-container-org7af0fc8" class="outline-6">
 <h6 id="org7af0fc8"><span class="api-link" data-link="/dd/def/class_zinnia_1_1_pointer_1_1_operation_1_1_mutation_1_1_pointer_element_property_mutator.html">PointerElementPropertyMutator&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h6>
@@ -1453,9 +1455,9 @@ Zinnia components.
 <h4 id="org5046b8f">Moment</h4>
 <div class="outline-text-4" id="text-org5046b8f">
 </div>
-<div id="outline-container-org9412849" class="outline-5">
-<h5 id="org9412849">Collection</h5>
-<div class="outline-text-5" id="text-org9412849">
+<div id="outline-container-orgbce3340" class="outline-5">
+<h5 id="orgbce3340">Collection</h5>
+<div class="outline-text-5" id="text-orgbce3340">
 </div>
 <div id="outline-container-orgc3d1aa5" class="outline-6">
 <h6 id="orgc3d1aa5"><span class="api-link" data-link="/de/db3/class_zinnia_1_1_process_1_1_moment_1_1_collection_1_1_moment_process_observable_list.html">MomentProcessObservableList&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h6>
@@ -1481,13 +1483,13 @@ Zinnia components.
 <h4 id="org8ce8730"><span class="api-link" data-link="/dd/dd5/class_zinnia_1_1_process_1_1_process_container.html">ProcessContainer&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h4>
 </div>
 </div>
-<div id="outline-container-org090a134" class="outline-3">
-<h3 id="org090a134">Rule</h3>
-<div class="outline-text-3" id="text-org090a134">
+<div id="outline-container-org7b27e75" class="outline-3">
+<h3 id="org7b27e75">Rule</h3>
+<div class="outline-text-3" id="text-org7b27e75">
 </div>
-<div id="outline-container-org91d321f" class="outline-4">
-<h4 id="org91d321f">Collection</h4>
-<div class="outline-text-4" id="text-org91d321f">
+<div id="outline-container-org056549f" class="outline-4">
+<h4 id="org056549f">Collection</h4>
+<div class="outline-text-4" id="text-org056549f">
 </div>
 <div id="outline-container-orgaa67678" class="outline-5">
 <h5 id="orgaa67678"><span class="api-link" data-link="/d3/d31/class_zinnia_1_1_rule_1_1_collection_1_1_rule_container_observable_list.html">RuleContainerObservableList&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h5>
@@ -1529,8 +1531,8 @@ Zinnia components.
 <div id="outline-container-org48c36d4" class="outline-4">
 <h4 id="org48c36d4"><span class="api-link" data-link="/d9/d69/class_zinnia_1_1_rule_1_1_negation_rule.html">NegationRule&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h4>
 </div>
-<div id="outline-container-orge2eee78" class="outline-4">
-<h4 id="orge2eee78"><span class="api-link" data-link="/d4/dad/class_zinnia_1_1_rule_1_1_rule.html">Rule&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h4>
+<div id="outline-container-org8236106" class="outline-4">
+<h4 id="org8236106"><span class="api-link" data-link="/d4/dad/class_zinnia_1_1_rule_1_1_rule.html">Rule&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h4>
 </div>
 <div id="outline-container-orgfd2597e" class="outline-4">
 <h4 id="orgfd2597e"><span class="api-link" data-link="/d7/d35/class_zinnia_1_1_rule_1_1_rule_container.html">RuleContainer&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h4>
@@ -1547,21 +1549,21 @@ Zinnia components.
 <h4 id="orgd741fef">CameraRig</h4>
 <div class="outline-text-4" id="text-orgd741fef">
 </div>
-<div id="outline-container-orgf0466c1" class="outline-5">
-<h5 id="orgf0466c1">Collection</h5>
-<div class="outline-text-5" id="text-orgf0466c1">
+<div id="outline-container-org6d03249" class="outline-5">
+<h5 id="org6d03249">Collection</h5>
+<div class="outline-text-5" id="text-org6d03249">
 </div>
 <div id="outline-container-org6d25a70" class="outline-6">
 <h6 id="org6d25a70"><span class="api-link" data-link="/d1/d7f/class_zinnia_1_1_tracking_1_1_camera_rig_1_1_collection_1_1_linked_alias_association_collection_observable_list.html">LinkedAliasAssociationCollectionObservableList&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h6>
 </div>
 </div>
-<div id="outline-container-org638b486" class="outline-5">
-<h5 id="org638b486">Operation</h5>
-<div class="outline-text-5" id="text-org638b486">
+<div id="outline-container-org470e2f2" class="outline-5">
+<h5 id="org470e2f2">Operation</h5>
+<div class="outline-text-5" id="text-org470e2f2">
 </div>
-<div id="outline-container-org01f2d2c" class="outline-6">
-<h6 id="org01f2d2c">Extraction</h6>
-<div class="outline-text-6" id="text-org01f2d2c">
+<div id="outline-container-org273b613" class="outline-6">
+<h6 id="org273b613">Extraction</h6>
+<div class="outline-text-6" id="text-org273b613">
 </div>
 <ul class="org-ul">
 <li><a id="org39ea7b0"></a><span class="api-link" data-link="/d2/d41/class_zinnia_1_1_tracking_1_1_camera_rig_1_1_operation_1_1_extraction_1_1_play_area_dimensions_extractor.html">PlayAreaDimensionsExtractor&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span><br /></li>
@@ -1580,12 +1582,12 @@ Zinnia components.
 <h5 id="orga72d055">Active</h5>
 <div class="outline-text-5" id="text-orga72d055">
 </div>
-<div id="outline-container-org34e6806" class="outline-6">
-<h6 id="org34e6806">Event</h6>
-<div class="outline-text-6" id="text-org34e6806">
+<div id="outline-container-orgf4cba3b" class="outline-6">
+<h6 id="orgf4cba3b">Event</h6>
+<div class="outline-text-6" id="text-orgf4cba3b">
 </div>
 <ul class="org-ul">
-<li><a id="org79a39ba"></a>Proxy<br />
+<li><a id="org68a07b7"></a>Proxy<br />
 <ul class="org-ul">
 <li><a id="org865c7b1"></a><span class="api-link" data-link="/d3/d04/class_zinnia_1_1_tracking_1_1_collision_1_1_active_1_1_event_1_1_proxy_1_1_active_collision_consumer_event_proxy_emitter.html">ActiveCollisionConsumerEventProxyEmitter&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span><br /></li>
 <li><a id="org66d4821"></a><span class="api-link" data-link="/de/d5c/class_zinnia_1_1_tracking_1_1_collision_1_1_active_1_1_event_1_1_proxy_1_1_active_collisions_container_event_proxy_emitter.html">ActiveCollisionsContainerEventProxyEmitter&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span><br /></li>
@@ -1593,12 +1595,12 @@ Zinnia components.
 </li>
 </ul>
 </div>
-<div id="outline-container-org044d620" class="outline-6">
-<h6 id="org044d620">Operation</h6>
-<div class="outline-text-6" id="text-org044d620">
+<div id="outline-container-orgf1b7679" class="outline-6">
+<h6 id="orgf1b7679">Operation</h6>
+<div class="outline-text-6" id="text-orgf1b7679">
 </div>
 <ul class="org-ul">
-<li><a id="org3787c54"></a>Extraction<br />
+<li><a id="org0faf9c1"></a>Extraction<br />
 <ul class="org-ul">
 <li><a id="org73b3085"></a><span class="api-link" data-link="/dc/d70/class_zinnia_1_1_tracking_1_1_collision_1_1_active_1_1_operation_1_1_extraction_1_1_notifier_container_extractor.html">NotifierContainerExtractor&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span><br /></li>
 <li><a id="org3c70530"></a><span class="api-link" data-link="/d0/d48/class_zinnia_1_1_tracking_1_1_collision_1_1_active_1_1_operation_1_1_extraction_1_1_notifier_target_extractor.html">NotifierTargetExtractor&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span><br /></li>
@@ -1623,13 +1625,13 @@ Zinnia components.
 <h6 id="org8706b1d"><span class="api-link" data-link="/d8/dd7/class_zinnia_1_1_tracking_1_1_collision_1_1_active_1_1_collision_point_container.html">CollisionPointContainer&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h6>
 </div>
 </div>
-<div id="outline-container-orgcf30141" class="outline-5">
-<h5 id="orgcf30141">Event</h5>
-<div class="outline-text-5" id="text-orgcf30141">
+<div id="outline-container-org5f71476" class="outline-5">
+<h5 id="org5f71476">Event</h5>
+<div class="outline-text-5" id="text-org5f71476">
 </div>
-<div id="outline-container-orgca42897" class="outline-6">
-<h6 id="orgca42897">Proxy</h6>
-<div class="outline-text-6" id="text-orgca42897">
+<div id="outline-container-org3080455" class="outline-6">
+<h6 id="org3080455">Proxy</h6>
+<div class="outline-text-6" id="text-org3080455">
 </div>
 <ul class="org-ul">
 <li><a id="orgd676f53"></a><span class="api-link" data-link="/d7/d33/class_zinnia_1_1_tracking_1_1_collision_1_1_event_1_1_proxy_1_1_collision_notifier_event_proxy_emitter.html">CollisionNotifierEventProxyEmitter&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span><br /></li>
@@ -1685,13 +1687,13 @@ Zinnia components.
 <h6 id="org4b565e5"><span class="api-link" data-link="/da/dec/class_zinnia_1_1_tracking_1_1_follow_1_1_modifier_1_1_follow_modifier.html">FollowModifier&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span></h6>
 </div>
 </div>
-<div id="outline-container-orgaf1f8cb" class="outline-5">
-<h5 id="orgaf1f8cb">Operation</h5>
-<div class="outline-text-5" id="text-orgaf1f8cb">
+<div id="outline-container-org9641f20" class="outline-5">
+<h5 id="org9641f20">Operation</h5>
+<div class="outline-text-5" id="text-org9641f20">
 </div>
-<div id="outline-container-org07f2e13" class="outline-6">
-<h6 id="org07f2e13">Extraction</h6>
-<div class="outline-text-6" id="text-org07f2e13">
+<div id="outline-container-org7cef466" class="outline-6">
+<h6 id="org7cef466">Extraction</h6>
+<div class="outline-text-6" id="text-org7cef466">
 </div>
 <ul class="org-ul">
 <li><a id="org741aa5b"></a><span class="api-link" data-link="/d0/d77/class_zinnia_1_1_tracking_1_1_follow_1_1_operation_1_1_extraction_1_1_object_distance_comparator_event_data_extractor.html">ObjectDistanceComparatorEventDataExtractor&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span><br /></li>
@@ -1709,13 +1711,13 @@ Zinnia components.
 <h4 id="org601f7e4">Modification</h4>
 <div class="outline-text-4" id="text-org601f7e4">
 </div>
-<div id="outline-container-org50b5550" class="outline-5">
-<h5 id="org50b5550">Operation</h5>
-<div class="outline-text-5" id="text-org50b5550">
+<div id="outline-container-org4ede9f7" class="outline-5">
+<h5 id="org4ede9f7">Operation</h5>
+<div class="outline-text-5" id="text-org4ede9f7">
 </div>
-<div id="outline-container-orgc5a72f0" class="outline-6">
-<h6 id="orgc5a72f0">Extraction</h6>
-<div class="outline-text-6" id="text-orgc5a72f0">
+<div id="outline-container-orgc4c0973" class="outline-6">
+<h6 id="orgc4c0973">Extraction</h6>
+<div class="outline-text-6" id="text-orgc4c0973">
 </div>
 <ul class="org-ul">
 <li><a id="org2cf7a8d"></a><span class="api-link" data-link="/df/d8b/class_zinnia_1_1_tracking_1_1_modification_1_1_operation_1_1_extraction_1_1_transform_property_applier_event_data_extractor.html">TransformPropertyApplierEventDataExtractor&#xa0;&#xa0;&#xa0;<span class="tag"><span class="api">api</span></span></span><br /></li>
@@ -1759,9 +1761,9 @@ Zinnia components.
 <h4 id="orge8d8e2f">Velocity</h4>
 <div class="outline-text-4" id="text-orge8d8e2f">
 </div>
-<div id="outline-container-orgeced61c" class="outline-5">
-<h5 id="orgeced61c">Collection</h5>
-<div class="outline-text-5" id="text-orgeced61c">
+<div id="outline-container-orgf6b2aef" class="outline-5">
+<h5 id="orgf6b2aef">Collection</h5>
+<div class="outline-text-5" id="text-orgf6b2aef">
 </div>
 <div id="outline-container-org6e42bfc" class="outline-6">
 <h6 id="org6e42bfc">VelocityTrackerObservableList</h6>
@@ -1827,7 +1829,7 @@ Zinnia components.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2019-12-05 Thu 16:16</p>
+<p class="date">Created: 2019-12-05 Thu 16:29</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

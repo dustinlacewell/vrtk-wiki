@@ -13,13 +13,16 @@
   #table-of-contents span.tag {
       display: none;
   }
-  #content > div[class^="outline-"] span.tag {
+  
+  #content span.tag, #content span.api {
+      border: 0px;
       background-color: transparent;
   }
 
-  #content > div[class^="outline-"] span.tag span.api a {
-    display: inline-block;
-    padding: .8em;
+  #content span.tag span.api a {
+      font-size: 20px;
+      display: inline-block;
+      margin-top: -4px;
   }
 </style>
 <script>
@@ -28,9 +31,8 @@
       for (i = 0; i < headers.length; i++) {
 	  var header = $(headers[i]);
 	  var link = header.data('link');
-	  header
-	      .find('.api')
-	      .wrapInner("<a href=\"/Unity/vrtk-wiki/docs/zinnia-api" + link + "\"></a>");
+	  header.find('.api').text("🗎");
+	  header.find('.api').wrapInner("<a href=\"/Unity/vrtk-wiki/docs/zinnia-api" + link + "\"></a>");
       }
   });
 </script>

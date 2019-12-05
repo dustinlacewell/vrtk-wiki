@@ -75,27 +75,8 @@
 (defun link-for-class (class-name)
   (cdr (assoc-string class-name records)))
 
-(defun my-html-headline-format (text backend info)
-  "Ensure dots in headlines."
-  (when (org-export-derived-backend-p backend 'html)
-    (save-match-data
-      nil
-      )))
-
-(eval-after-load 'ox
-  '(progn
-     (add-to-list 'org-export-filter-headline-functions
-                  'my-html-headline-format)))
-
 (defun my-html-headline-formatter (todo todo-type priority text tags info)
   "Format a headline with a link to itself."
-  ;; (let* ((headline (get-text-property 0 :parent text))
-  ;;        (id (or (org-element-property :CUSTOM_ID headline)
-  ;;                (org-export-get-reference headline info)
-  ;;                (org-element-property :ID headline)))
-  ;;        (link (if id
-  ;;                  (format "<a href=\"#%s\">%s</a>" id text)
-  ;;                text))))
   (let ((result (org-html-format-headline-default-function todo todo-type priority text tags info))
 	(link (link-for-class text)))
     (if (and link (seq-find (lambda (o) (string-equal "api" o)) tags))

@@ -1,14 +1,14 @@
-* TODO +Zinnia
+* TODO Zinnia
   This page is community documentation for [[https://github.com/ExtendRealityLtd/Zinnia.Unity][Zinnia.Unity]], a package in
   the VRTK family.
 
   The generated API documentation can be found [[https://dustinlacewell.github.io/vrtk-wiki/zinnia/index.html][here]].
 
-** +Action
+** Action
    Actions recieve and emit values of a given type. In addition to
    Unity Events, they are a primary mechanism for communication in
    Zinnia.
-*** +Collection
+*** Collection
     Scripts for observing lists of action related types.
 **** ActionObservableList
      [[file:../vrtk-wiki/zinnia-api/db/ddb/class_zinnia_1_1_action_1_1_collection_1_1_action_observable_list.html][API Docs]]
@@ -78,7 +78,7 @@
     each time Recieve is called.
 *** Vector2Action                                                       :api:
     [[Action]] that recieves and emits Vector2 values.
-** +Association
+** Association
    Associations create a relation between some condition and the state
    of items in a collection.
 
@@ -88,7 +88,7 @@
    The only case right now is [[GameObjectsAssociation]] which relates
    whether a collection of GameObjects are (in)active based on some
    condition.
-*** +Collection
+*** Collection
 **** GameObjectsAssociationObservableList                               :api:
      An observable list of [[GameObjectsAssociation]] instances.
 *** GameObjectsAssociation                                              :api:
@@ -104,10 +104,10 @@
     device name matches the `XrDeviceNamePattern` regular expression.
 
     - XrDeviceNamePattern: Regular expression to match XR device names.
-** +Cast
+** Cast
    Behaviours which perform raycasts.
-*** +Collection
-**** +Mutation
+*** Collection
+**** Mutation
 ***** PointsCastPropertyMutator                                         :api:
       Mutates the properties of a target [[PointsCast]].
 
@@ -158,8 +158,8 @@
 *** ParabolicLineCast                                                   :api:
     A [[PointsCast]] which returns the points at the origin, target, and a
     parabolic arc of points in between.
-** TODO +Data
-*** TODO +Attribute
+** TODO Data
+*** TODO Attribute
 **** CustomInspectorTextAttribute                                       :api:
      Allows for specifing custom text in Zinnia component inspectors.
 **** MinMaxRangeAttribute                                               :api:
@@ -175,11 +175,11 @@
 **** TODO UnityFlagsAttribute
      These attributes are for annotating fields for the inspectors of
      Zinnia components.
-*** TODO +Collection
-**** TODO +Counter
+*** TODO Collection
+**** TODO Counter
 ***** TODO GameObjectObservableCounter                                  :api:
 ***** TODO ObservableCounter                                            :api:
-**** TODO +List
+**** TODO List
 ***** TODO BehaviourObservableList                                      :api:
 ***** TODO DefaultObservableList                                        :api:
 ***** TODO FloatObservableList                                          :api:
@@ -192,13 +192,13 @@
 ***** TODO UnityObjectObservableList                                    :api:
 ***** TODO Vector2ObservableList                                        :api:
 ***** TODO Vector3ObservableList                                        :api:
-**** TODO +Stack
+**** TODO Stack
 ***** TODO GameObjectObservableStack                                    :api:
 ***** TODO ObservableStack                                              :api:
-*** TODO +Enum
+*** TODO Enum
 **** TODO TransformProperties
-*** TODO +Operation
-**** TODO +Extraction
+*** TODO Operation
+**** TODO Extraction
 ***** TODO ComponentGameObjectExtractor                                 :api:
 ***** TODO GameObjectExtractor                                          :api:
 ***** TODO SurfaceDataCollisionPointExtractor                           :api:
@@ -210,22 +210,22 @@
 ***** TODO TransformScaleExtractor                                      :api:
 ***** TODO Vector2ComponentExtractor                                    :api:
 ***** TODO Vector3Extractor                                             :api:
-**** TODO +Mutation
+**** TODO Mutation
 ***** TODO RigidbodyPropertyMutator                                     :api:
 ***** TODO TransformEulerRotationMutator                                :api:
 ***** TODO TransformPositionMutator                                     :api:
 ***** TODO TransformPropertyMutator                                     :api:
 ***** TODO TransformScaleMutator                                        :api:
-*** TODO +Type
-**** TODO +Transformation
-***** TODO +Aggregation
+*** TODO Type
+**** TODO Transformation
+***** TODO Aggregation
 ****** TODO CollectionAggregator                                        :api:
 ****** TODO FloatAdder                                                  :api:
 ****** TODO FloatMultiplier                                             :api:
 ****** TODO Vector2Multiplier                                           :api:
 ****** TODO Vector3Multiplier                                           :api:
 ****** TODO Vector3Subtractor                                           :api:
-***** TODO +Conversion
+***** TODO Conversion
 ****** TODO AngleToVector2Direction                                     :api:
 ****** TODO BooleanToFloat                                              :api:
 ****** TODO FloatToBoolean                                              :api:
@@ -246,8 +246,8 @@
 **** TODO SurfaceData                                                   :api:
 **** TODO TransformData                                                 :api:
 **** TODO Vector3State
-** TODO +Event
-*** TODO +Proxy
+** TODO Event
+*** TODO Proxy
 **** TODO EmptyEventProxyEmitter                                        :api:
 **** TODO EventProxyEmitter                                             :api:
 **** TODO FloatEventProxyEmitter                                        :api:
@@ -257,7 +257,7 @@
 **** TODO SurfaceDataProxyEmitter                                       :api:
 **** TODO TransformDataProxyEmitter                                     :api:
 *** TODO BehaviourEnabledObserver                                       :api:
-** TODO +Extension
+** TODO Extension
 *** TODO ArraySortExtensions                                            :api:
 *** TODO BehaviourExtensions                                            :api:
 *** TODO ColliderExtensions                                             :api:
@@ -270,8 +270,8 @@
 *** TODO TransformExtensions                                            :api:
 *** TODO Vector2Extensions                                              :api:
 *** TODO Vector3Extensions                                              :api:
-** TODO +Haptics
-*** TODO +Collection
+** TODO Haptics
+*** TODO Collection
 **** TODO HapticProcessObservableList                                   :api:
 *** TODO AudioClipHapticPulser                                          :api:
 *** TODO AudioSourceHapticPulser                                        :api:
@@ -281,18 +281,18 @@
 *** TODO RoutineHapticPulser                                            :api:
 *** TODO TimedHapticPulser
 *** TODO XRNodeHapticPulser                                             :api:
-** TODO +Pointer
-*** TODO +Operation
-**** TODO +Mutation
+** TODO Pointer
+*** TODO Operation
+**** TODO Mutation
 ***** TODO PointerElementPropertyMutator                                :api:
 *** TODO ObjectPointer                                                  :api:
 *** TODO PointerElement                                                 :api:
-** TODO +Process
-*** TODO +Component
+** TODO Process
+*** TODO Component
 **** TODO GameObjectSourceTargetProcessor                               :api:
 **** TODO SourceTargetProcessor                                         :api:
-*** TODO +Moment
-**** TODO +Collection
+*** TODO Moment
+**** TODO Collection
 ***** TODO MomentProcessObservableList                                  :api:
 **** TODO CompositeProcess                                              :api:
 **** TODO MomentProcess                                                 :api:
@@ -300,8 +300,8 @@
 *** TODO EventProcess                                                   :api:
 *** TODO IProcessable                                                   :api:
 *** TODO ProcessContainer                                               :api:
-** TODO +Rule
-*** TODO +Collection
+** TODO Rule
+*** TODO Collection
 **** TODO RuleContainerObservableList                                   :api:
 **** TODO RulesMatcherElementObservableList                             :api:
 *** TODO ActiveInHierarchyRule                                          :api:
@@ -318,22 +318,22 @@
 *** TODO Rule                                                           :api:
 *** TODO RuleContainer                                                  :api:
 *** TODO RulesMatcher                                                   :api:
-** TODO +Tracking
-*** TODO +CameraRig
-**** TODO +Collection
+** TODO Tracking
+*** TODO CameraRig
+**** TODO Collection
 ***** TODO LinkedAliasAssociationCollectionObservableList               :api:
-**** TODO +Operation
-***** TODO +Extraction
+**** TODO Operation
+***** TODO Extraction
 ****** TODO PlayAreaDimensionsExtractor                                 :api:
 **** TODO LinkedAliasAssocationCollection
-*** TODO +Collision
-**** TODO +Active
-***** TODO +Event
-****** TODO +Proxy
+*** TODO Collision
+**** TODO Active
+***** TODO Event
+****** TODO Proxy
 ******* TODO ActiveCollisionConsumerEventProxyEmitter                   :api:
 ******* TODO ActiveCollisionsContainerEventProxyEmitter                 :api:
-***** TODO +Operation
-****** TODO +Extraction
+***** TODO Operation
+****** TODO Extraction
 ******* TODO NotifierContainerExtractor                                 :api:
 ******* TODO NotifierTargetExtractor                                    :api:
 ******* TODO PublisherContainerExtractor                                :api:
@@ -344,35 +344,35 @@
 ***** TODO ActiveCollisionPublisher                                     :api:
 ***** TODO ActiveCollisionsContainer                                    :api:
 ***** TODO CollisionPointContainer                                      :api:
-**** TODO +Event
-***** TODO +Proxy
+**** TODO Event
+***** TODO Proxy
 ****** TODO CollisionNotifierEventProxyEmitter                          :api:
 **** TODO CollisionIgnorer                                              :api:
 **** TODO CollisionNotifier                                             :api:
 **** TODO CollisionTracker                                              :api:
-*** TODO +Follow
-**** TODO +Modifier
-***** TODO +Property
-****** TODO +Position
+*** TODO Follow
+**** TODO Modifier
+***** TODO Property
+****** TODO Position
 ******* TODO RigidbodyVelocity                                          :api:
 ******* TODO TransformPosition                                          :api:
-****** TODO +Rotation
+****** TODO Rotation
 ******* TODO RigidbodyAngularVelocity                                   :api:
 ******* TODO RigidbodyForceAtPosition                                   :api:
 ******* TODO TransformPositionDifferenceRotation                        :api:
 ******* TODO TransformRotation                                          :api:
-****** TODO +Scale
+****** TODO Scale
 ******* TODO TransformScale                                             :api:
 ****** TODO PropertyModifier                                            :api:
 ***** TODO FollowModifier                                               :api:
-**** TODO +Operation
-***** TODO +Extraction
+**** TODO Operation
+***** TODO Extraction
 ****** TODO ObjectDistanceComparatorEventDataExtractor                  :api:
 **** TODO ObjectDistanceComparator                                      :api:
 **** TODO ObjectFollower                                                :api:
-*** TODO +Modification
-**** TODO +Operation
-***** TODO +Extraction
+*** TODO Modification
+**** TODO Operation
+***** TODO Extraction
 ****** TODO TransformPropertyApplierEventDataExtractor                  :api:
 **** TODO ComponentEnabledStateModifier                                 :api:
 **** TODO DirectionModifier                                             :api:
@@ -381,11 +381,11 @@
 **** TODO PinchScaler                                                   :api:
 **** TODO PointNormalRotator                                            :api:
 **** TODO TransformPropertyApplier                                      :api:
-*** TODO +Query
+*** TODO Query
 **** TODO FacingQuery                                                   :api:
 **** TODO ObscuranceQuery                                               :api:
-*** TODO +Velocity
-**** TODO +Collection
+*** TODO Velocity
+**** TODO Collection
 ***** TODO VelocityTrackerObservableList
 **** TODO ArtificialVelocityApplier                                     :api:
 **** TODO AverageVelocityEstimator                                      :api:
@@ -397,11 +397,10 @@
 **** TODO VelocityTrackerProcessor                                      :api:
 **** TODO XRNodeVelocityEstimator                                       :api:
 *** TODO SurfaceLocator                                                 :api:
-** TODO +Utility
+** TODO Utility
 *** TODO BeizerCurveGenerator
 *** TODO CountdownTimer                                                 :api:
 *** TODO InterfaceContainer                                             :api:
-** TODO +Visual
+** TODO Visual
 *** TODO CameraColorOverlay                                             :api:
 *** TODO PointsRenderer                                                 :api:
-

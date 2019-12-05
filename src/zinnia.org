@@ -1,5 +1,3 @@
-#+OPTIONS: H:5
-
 * TODO +Zinnia
   This page is community documentation for [[https://github.com/ExtendRealityLtd/Zinnia.Unity][Zinnia.Unity]], a package in
   the VRTK family.
@@ -22,9 +20,7 @@
 
      Maintains a list of [[ActionRegistrar]].ActionSource instances and
      emits events when that list changes.
-*** Action
-    [[file:../vrtk-wiki/zinnia-api/d4/dc2/class_zinnia_1_1_action_1_1_action.html][API Docs]]
-
+*** Action                                                              :api:
     Base class for all action types.
 
     Each action has a data-type, like float or GameObject.
@@ -36,9 +32,7 @@
       - Value Changed
       - Deactivated
 
-*** ActionRegistrar
-    [[file:../vrtk-wiki/zinnia-api/d2/dae/class_zinnia_1_1_action_1_1_action_registrar.html][API Docs]]
-
+*** ActionRegistrar                                                     :api:
     Sets the sources of a target [[Action]] based on a list of other
     Actions.
 
@@ -57,48 +51,32 @@
     - SourceLimits: A list of GameObjects denoting valid parent
       GameObjects.
 
-*** AllAction
-    [[file:../vrtk-wiki/zinnia-api/df/dde/class_zinnia_1_1_action_1_1_all_action.html][API Docs]]
-
+*** AllAction                                                           :api:
     [[Action]] that emits a boolean when all the given actions are
     `Action.IsActivated`.
 
     - Actions: [[ActionObservableList]] of actions which all need to be
       activated.
-*** AnyAction
-    [[file:../vrtk-wiki/zinnia-api/df/dea/class_zinnia_1_1_action_1_1_any_action.html][API Docs]]
-
+*** AnyAction                                                           :api:
     [[Action]] that emits a boolean when any of the given actions are
     `Action.IsActivated`.
 
     - Actions: [[ActionObservableList]] of actions any of which need to be
       activated.
-*** BooleanAction
-    [[file:../vrtk-wiki/zinnia-api/de/dc7/class_zinnia_1_1_action_1_1_boolean_action.html][API Docs]]
-
+*** BooleanAction                                                       :api:
     [[Action]] that receives and emits booleans.
-*** FloatAction
-    [[file:../vrtk-wiki/zinnia-api/d4/d7f/class_zinnia_1_1_action_1_1_float_action.html][API Docs]]
-
+*** FloatAction                                                         :api:
     [[Action]] that receives and emits floats.
-*** StateEmitter
-    [[file:../vrtk-wiki/zinnia-api/d7/deb/class_zinnia_1_1_action_1_1_state_emitter.html][API Docs]]
-
+*** StateEmitter                                                        :api:
     An [[IProcessable]] which causes an [[Action]] to re-emit it's last value
     each time the process is run.
-*** SurfaceChangeAction
-    [[file:../vrtk-wiki/zinnia-api/d2/d84/class_zinnia_1_1_action_1_1_surface_change_action.html][API Docs]]
-
+*** SurfaceChangeAction                                                 :api:
     [[Action]] that receives a [[SurfaceData]] current and emits when the
     current and previous positions exceed the specified distance.
-*** ToggleAction
-    [[file:../vrtk-wiki/zinnia-api/d2/dea/class_zinnia_1_1_action_1_1_toggle_action.html][API Docs]]
-
+*** ToggleAction                                                        :api:
     Alternates between emitting its Activated and Deactivated events
     each time Recieve is called.
-*** Vector2Action
-    [[file:../vrtk-wiki/zinnia-api/d4/d34/class_zinnia_1_1_action_1_1_vector2_action.html][API Docs]]
-
+*** Vector2Action                                                       :api:
     [[Action]] that recieves and emits Vector2 values.
 ** +Association
    Associations create a relation between some condition and the state
@@ -111,25 +89,17 @@
    whether a collection of GameObjects are (in)active based on some
    condition.
 *** +Collection
-**** GameObjectsAssociationObservableList
-     [[file:../vrtk-wiki/zinnia-api/d8/d01/class_zinnia_1_1_association_1_1_collection_1_1_game_objects_association_observable_list.html][API Docs]]
-
+**** GameObjectsAssociationObservableList                               :api:
      An observable list of [[GameObjectsAssociation]] instances.
-*** GameObjectsAssociation
-    [[file:../vrtk-wiki/zinnia-api/d0/d34/class_zinnia_1_1_association_1_1_game_objects_association.html][API Docs]]
-
+*** GameObjectsAssociation                                              :api:
     Abstract class which references a [[GameObjectObservableList]] of
     objects to (de)activate based on abstract boolean method
     `ShouldBeActive`.
-*** GameObjectsAssociationActivator
-    [[file:../vrtk-wiki/zinnia-api/d3/de3/class_zinnia_1_1_association_1_1_game_objects_association_activator.html][API Docs]]
-
+*** GameObjectsAssociationActivator                                     :api:
     An [[IProcessable]] which applies the action of a list of
     [[GameObjectsAssociation]] causing their associated GameObjects to be
     (de)activated accordingly.
-*** LoadedXrDeviceAssociation
-    [[file:../vrtk-wiki/zinnia-api/dd/db3/class_zinnia_1_1_association_1_1_loaded_xr_device_association.html][API Docs]]
-
+*** LoadedXrDeviceAssociation                                           :api:
     (De)activates GameObjects based on whether the currently loaded XR
     device name matches the `XrDeviceNamePattern` regular expression.
 
@@ -138,23 +108,17 @@
    Behaviours which perform raycasts.
 *** +Collection
 **** +Mutation
-***** PointsCastPropertyMutator
-      [[file:../vrtk-wiki/zinnia-api/d1/da3/class_zinnia_1_1_cast_1_1_operation_1_1_mutation_1_1_points_cast_property_mutator.html][API Docs]]
-
+***** PointsCastPropertyMutator                                         :api:
       Mutates the properties of a target [[PointsCast]].
 
       A GameObject maybe set as the `Target` using the `SetTarget`
       method which will search for the [[PointsCast]] as either a direct,
       descendant, or ancestor.
-*** PhysicsCast
-    [[file:../vrtk-wiki/zinnia-api/d4/d8f/class_zinnia_1_1_cast_1_1_physics_cast.html][API Docs]]
-
+*** PhysicsCast                                                         :api:
     A MonoBehaviour which allows for customizing the settings of a
     Raycast at edit time in the inspector. This can be used by the
     various casting components.
-*** PointsCast
-    [[file:../vrtk-wiki/zinnia-api/d7/d7b/class_zinnia_1_1_cast_1_1_points_cast.html][API Docs]]
-
+*** PointsCast                                                          :api:
     Abstract [[IProcessable]] for casting components that result in points
     along the cast.
 
@@ -173,9 +137,7 @@
     - EventData: The [[EventData]] for the latest cast.
 
 
-**** EventData
-     [[file:../vrtk-wiki/zinnia-api/dc/de8/class_zinnia_1_1_tracking_1_1_follow_1_1_object_follower_1_1_event_data.html][API Docs]]
-
+**** EventData                                                          :api:
      Holds data about a [[PointsCast]] event.
 
      - HitData: `RaycastHit?` The result of the most recent
@@ -184,43 +146,29 @@
        TargetValidity rule.
      - Points: Vector3 points along the most recent cast.
 
-*** FixedLineCast
-    [[file:../vrtk-wiki/zinnia-api/d1/dc3/class_zinnia_1_1_cast_1_1_fixed_line_cast.html][API Docs]]
-
+*** FixedLineCast                                                       :api:
     A [[StraightLineCast]] except that it only checks for hits at the end
     of the limited-distance raycast. If no hit is detected, the second
     point returned is `null`.
-*** StraightLineCast
-    [[file:../vrtk-wiki/zinnia-api/d4/d8e/class_zinnia_1_1_cast_1_1_straight_line_cast.html][API Docs]]
-
+*** StraightLineCast                                                    :api:
     A [[PointsCast]] which performs a raycast from an origin and direction
     to a maximum distance. It returns two points. The first point is
     the origin. The second point is either the maximum position of the
     line, or the location of any collider hit along the way.
-*** ParabolicLineCast
-    [[file:../vrtk-wiki/zinnia-api/dc/dd0/class_zinnia_1_1_cast_1_1_parabolic_line_cast.html][API Docs]]
-
+*** ParabolicLineCast                                                   :api:
     A [[PointsCast]] which returns the points at the origin, target, and a
     parabolic arc of points in between.
 ** TODO +Data
 *** TODO +Attribute
-**** CustomInspectorTextAttribute
-     [[file:../vrtk-wiki/zinnia-api/db/d13/class_zinnia_1_1_data_1_1_attribute_1_1_custom_inspector_text_attribute.html][API Docs]]
-
+**** CustomInspectorTextAttribute                                       :api:
      Allows for specifing custom text in Zinnia component inspectors.
-**** MinMaxRangeAttribute
-     [[file:../vrtk-wiki/zinnia-api/d2/d42/class_zinnia_1_1_data_1_1_attribute_1_1_min_max_range_attribute.html][API Docs]]
-
+**** MinMaxRangeAttribute                                               :api:
      Allows for defining a min and max range for float fields in
      Zinnia component inspectors.
-**** RestrictedAttribute
-     [[file:../vrtk-wiki/zinnia-api/d6/d16/class_zinnia_1_1_data_1_1_attribute_1_1_restricted_attribute.html][API Docs]]
-
+**** RestrictedAttribute                                                :api:
      Allows for making fields non-editable in Zinnia component
      inspectors.
-**** TypePickerAttribute
-     [[file:../vrtk-wiki/zinnia-api/dd/d90/class_zinnia_1_1_data_1_1_attribute_1_1_type_picker_attribute.html][API Docs]]
-
+**** TypePickerAttribute                                                :api:
      Allow for displaying pickers for
      `Zinnia.Data.Type.SerializableType` fields in Zinnia component
      inspectors.
@@ -229,564 +177,231 @@
      Zinnia components.
 *** TODO +Collection
 **** TODO +Counter
-***** TODO GameObjectObservableCounter
-      [[file:../vrtk-wiki/zinnia-api/d9/db6/class_zinnia_1_1_data_1_1_collection_1_1_counter_1_1_game_object_observable_counter.html][API Docs]]
-
-***** TODO ObservableCounter
-      [[file:../vrtk-wiki/zinnia-api/d7/d70/class_zinnia_1_1_data_1_1_collection_1_1_counter_1_1_observable_counter.html][API Docs]]
-
+***** TODO GameObjectObservableCounter                                  :api:
+***** TODO ObservableCounter                                            :api:
 **** TODO +List
-***** TODO BehaviourObservableList
-      [[file:../vrtk-wiki/zinnia-api/d2/dfb/class_zinnia_1_1_data_1_1_collection_1_1_list_1_1_behaviour_observable_list.html][API Docs]]
-
-***** TODO DefaultObservableList
-      [[file:../vrtk-wiki/zinnia-api/d0/dc5/class_zinnia_1_1_data_1_1_collection_1_1_list_1_1_default_observable_list.html][API Docs]]
-
-***** TODO FloatObservableList
-      [[file:../vrtk-wiki/zinnia-api/de/d32/class_zinnia_1_1_data_1_1_collection_1_1_list_1_1_float_observable_list.html][API Docs]]
-
-***** TODO GameObjectObservableList
-      [[file:../vrtk-wiki/zinnia-api/d3/d48/class_zinnia_1_1_data_1_1_collection_1_1_list_1_1_game_object_observable_list.html][API Docs]]
-
-***** TODO GameObjectRelationObservableList
-      [[file:../vrtk-wiki/zinnia-api/de/da0/class_zinnia_1_1_data_1_1_collection_1_1_list_1_1_game_object_relation_observable_list.html][API Docs]]
-
-***** TODO ObservableList
-      [[file:../vrtk-wiki/zinnia-api/dd/d86/class_zinnia_1_1_data_1_1_collection_1_1_list_1_1_observable_list.html][API Docs]]
-
-***** TODO SerializableTypeBehaviourObservableList
-      [[file:../vrtk-wiki/zinnia-api/de/dd6/class_zinnia_1_1_data_1_1_collection_1_1_list_1_1_serializable_type_behaviour_observable_list.html][API Docs]]
-
-***** TODO SerializableTypeComponentObservableList
-      [[file:../vrtk-wiki/zinnia-api/d1/d04/class_zinnia_1_1_data_1_1_collection_1_1_list_1_1_serializable_type_component_observable_list.html][API Docs]]
-
-***** TODO StringObservableList
-      [[file:../vrtk-wiki/zinnia-api/dc/d08/class_zinnia_1_1_data_1_1_collection_1_1_list_1_1_string_observable_list.html][API Docs]]
-
-***** TODO UnityObjectObservableList
-      [[file:../vrtk-wiki/zinnia-api/d8/d1b/class_zinnia_1_1_data_1_1_collection_1_1_list_1_1_unity_object_observable_list.html][API Docs]]
-
-***** TODO Vector2ObservableList
-      [[file:../vrtk-wiki/zinnia-api/da/d02/class_zinnia_1_1_data_1_1_collection_1_1_list_1_1_vector2_observable_list.html][API Docs]]
-
-***** TODO Vector3ObservableList
-      [[file:../vrtk-wiki/zinnia-api/d6/df5/class_zinnia_1_1_data_1_1_collection_1_1_list_1_1_vector3_observable_list.html][API Docs]]
-
+***** TODO BehaviourObservableList                                      :api:
+***** TODO DefaultObservableList                                        :api:
+***** TODO FloatObservableList                                          :api:
+***** TODO GameObjectObservableList                                     :api:
+***** TODO GameObjectRelationObservableList                             :api:
+***** TODO ObservableList                                               :api:
+***** TODO SerializableTypeBehaviourObservableList                      :api:
+***** TODO SerializableTypeComponentObservableList                      :api:
+***** TODO StringObservableList                                         :api:
+***** TODO UnityObjectObservableList                                    :api:
+***** TODO Vector2ObservableList                                        :api:
+***** TODO Vector3ObservableList                                        :api:
 **** TODO +Stack
-***** TODO GameObjectObservableStack
-      [[file:../vrtk-wiki/zinnia-api/df/d41/class_zinnia_1_1_data_1_1_collection_1_1_stack_1_1_game_object_observable_stack.html][API Docs]]
-
-***** TODO ObservableStack
-      [[file:../vrtk-wiki/zinnia-api/d3/d88/class_zinnia_1_1_data_1_1_collection_1_1_stack_1_1_observable_stack.html][API Docs]]
-
+***** TODO GameObjectObservableStack                                    :api:
+***** TODO ObservableStack                                              :api:
 *** TODO +Enum
 **** TODO TransformProperties
 *** TODO +Operation
 **** TODO +Extraction
-***** TODO ComponentGameObjectExtractor
-      [[file:../vrtk-wiki/zinnia-api/db/d86/class_zinnia_1_1_data_1_1_operation_1_1_extraction_1_1_component_game_object_extractor.html][API Docs]]
-
-***** TODO GameObjectExtractor
-      [[file:../vrtk-wiki/zinnia-api/d5/d9a/class_zinnia_1_1_data_1_1_operation_1_1_extraction_1_1_game_object_extractor.html][API Docs]]
-
-***** TODO SurfaceDataCollisionPointExtractor
-      [[file:../vrtk-wiki/zinnia-api/da/d50/class_zinnia_1_1_data_1_1_operation_1_1_extraction_1_1_surface_data_collision_point_extractor.html][API Docs]]
-
-***** TODO TransformDataGameObjectExtractor
-      [[file:../vrtk-wiki/zinnia-api/dd/d73/class_zinnia_1_1_data_1_1_operation_1_1_extraction_1_1_transform_data_game_object_extractor.html][API Docs]]
-
-***** TODO TransformDirectionExtractor
-      [[file:../vrtk-wiki/zinnia-api/de/d8a/class_zinnia_1_1_data_1_1_operation_1_1_extraction_1_1_transform_direction_extractor.html][API Docs]]
-
-***** TODO TransformEulerRotationExtractor
-      [[file:../vrtk-wiki/zinnia-api/da/d9c/class_zinnia_1_1_data_1_1_operation_1_1_extraction_1_1_transform_euler_rotation_extractor.html][API Docs]]
-
-***** TODO TransformPositionExtractor
-      [[file:../vrtk-wiki/zinnia-api/d1/d3d/class_zinnia_1_1_data_1_1_operation_1_1_extraction_1_1_transform_position_extractor.html][API Docs]]
-
-***** TODO TransformPropertyExtractor
-      [[file:../vrtk-wiki/zinnia-api/db/dee/class_zinnia_1_1_data_1_1_operation_1_1_extraction_1_1_transform_property_extractor.html][API Docs]]
-
-***** TODO TransformScaleExtractor
-      [[file:../vrtk-wiki/zinnia-api/d4/d34/class_zinnia_1_1_data_1_1_operation_1_1_extraction_1_1_transform_scale_extractor.html][API Docs]]
-
-***** TODO Vector2ComponentExtractor
-      [[file:../vrtk-wiki/zinnia-api/d8/da7/class_zinnia_1_1_data_1_1_operation_1_1_extraction_1_1_vector2_component_extractor.html][API Docs]]
-
-***** TODO Vector3Extractor
-      [[file:../vrtk-wiki/zinnia-api/d5/dc9/class_zinnia_1_1_data_1_1_operation_1_1_extraction_1_1_vector3_extractor.html][API Docs]]
-
+***** TODO ComponentGameObjectExtractor                                 :api:
+***** TODO GameObjectExtractor                                          :api:
+***** TODO SurfaceDataCollisionPointExtractor                           :api:
+***** TODO TransformDataGameObjectExtractor                             :api:
+***** TODO TransformDirectionExtractor                                  :api:
+***** TODO TransformEulerRotationExtractor                              :api:
+***** TODO TransformPositionExtractor                                   :api:
+***** TODO TransformPropertyExtractor                                   :api:
+***** TODO TransformScaleExtractor                                      :api:
+***** TODO Vector2ComponentExtractor                                    :api:
+***** TODO Vector3Extractor                                             :api:
 **** TODO +Mutation
-***** TODO RigidbodyPropertyMutator
-      [[file:../vrtk-wiki/zinnia-api/d8/d88/class_zinnia_1_1_data_1_1_operation_1_1_mutation_1_1_rigidbody_property_mutator.html][API Docs]]
-
-***** TODO TransformEulerRotationMutator
-      [[file:../vrtk-wiki/zinnia-api/d7/d80/class_zinnia_1_1_data_1_1_operation_1_1_mutation_1_1_transform_euler_rotation_mutator.html][API Docs]]
-
-***** TODO TransformPositionMutator
-      [[file:../vrtk-wiki/zinnia-api/da/d3b/class_zinnia_1_1_data_1_1_operation_1_1_mutation_1_1_transform_position_mutator.html][API Docs]]
-
-***** TODO TransformPropertyMutator
-      [[file:../vrtk-wiki/zinnia-api/dc/d65/class_zinnia_1_1_data_1_1_operation_1_1_mutation_1_1_transform_property_mutator.html][API Docs]]
-
-***** TODO TransformScaleMutator
-      [[file:../vrtk-wiki/zinnia-api/d0/d26/class_zinnia_1_1_data_1_1_operation_1_1_mutation_1_1_transform_scale_mutator.html][API Docs]]
-
+***** TODO RigidbodyPropertyMutator                                     :api:
+***** TODO TransformEulerRotationMutator                                :api:
+***** TODO TransformPositionMutator                                     :api:
+***** TODO TransformPropertyMutator                                     :api:
+***** TODO TransformScaleMutator                                        :api:
 *** TODO +Type
 **** TODO +Transformation
 ***** TODO +Aggregation
-****** TODO CollectionAggregator
-       [[file:../vrtk-wiki/zinnia-api/db/d2d/class_zinnia_1_1_data_1_1_type_1_1_transformation_1_1_aggregation_1_1_collection_aggregator.html][API Docs]]
-
-****** TODO FloatAdder
-       [[file:../vrtk-wiki/zinnia-api/dc/d70/class_zinnia_1_1_data_1_1_type_1_1_transformation_1_1_aggregation_1_1_float_adder.html][API Docs]]
-
-****** TODO FloatMultiplier
-       [[file:../vrtk-wiki/zinnia-api/d3/d88/class_zinnia_1_1_data_1_1_type_1_1_transformation_1_1_aggregation_1_1_float_multiplier.html][API Docs]]
-
-****** TODO Vector2Multiplier
-       [[file:../vrtk-wiki/zinnia-api/d8/d46/class_zinnia_1_1_data_1_1_type_1_1_transformation_1_1_aggregation_1_1_vector2_multiplier.html][API Docs]]
-
-****** TODO Vector3Multiplier
-       [[file:../vrtk-wiki/zinnia-api/d6/d1c/class_zinnia_1_1_data_1_1_type_1_1_transformation_1_1_aggregation_1_1_vector3_multiplier.html][API Docs]]
-
-****** TODO Vector3Subtractor
-       [[file:../vrtk-wiki/zinnia-api/d5/d4f/class_zinnia_1_1_data_1_1_type_1_1_transformation_1_1_aggregation_1_1_vector3_subtractor.html][API Docs]]
-
+****** TODO CollectionAggregator                                        :api:
+****** TODO FloatAdder                                                  :api:
+****** TODO FloatMultiplier                                             :api:
+****** TODO Vector2Multiplier                                           :api:
+****** TODO Vector3Multiplier                                           :api:
+****** TODO Vector3Subtractor                                           :api:
 ***** TODO +Conversion
-****** TODO AngleToVector2Direction
-       [[file:../vrtk-wiki/zinnia-api/d2/d12/class_zinnia_1_1_data_1_1_type_1_1_transformation_1_1_conversion_1_1_angle_to_vector2_direction.html][API Docs]]
-
-****** TODO BooleanToFloat
-       [[file:../vrtk-wiki/zinnia-api/de/d52/class_zinnia_1_1_data_1_1_type_1_1_transformation_1_1_conversion_1_1_boolean_to_float.html][API Docs]]
-
-****** TODO FloatToBoolean
-       [[file:../vrtk-wiki/zinnia-api/de/d34/class_zinnia_1_1_data_1_1_type_1_1_transformation_1_1_conversion_1_1_float_to_boolean.html][API Docs]]
-
-****** TODO FloatToVector2
-       [[file:../vrtk-wiki/zinnia-api/d2/dfd/class_zinnia_1_1_data_1_1_type_1_1_transformation_1_1_conversion_1_1_float_to_vector2.html][API Docs]]
-
-****** TODO FloatToVector3
-       [[file:../vrtk-wiki/zinnia-api/dd/df5/class_zinnia_1_1_data_1_1_type_1_1_transformation_1_1_conversion_1_1_float_to_vector3.html][API Docs]]
-
-****** TODO Vector2ToAngle
-       [[file:../vrtk-wiki/zinnia-api/db/d3d/class_zinnia_1_1_data_1_1_type_1_1_transformation_1_1_conversion_1_1_vector2_to_angle.html][API Docs]]
-
-****** TODO Vector2ToFloat
-       [[file:../vrtk-wiki/zinnia-api/d8/dc3/class_zinnia_1_1_data_1_1_type_1_1_transformation_1_1_conversion_1_1_vector2_to_float.html][API Docs]]
-
-****** TODO Vector2ToVector3
-       [[file:../vrtk-wiki/zinnia-api/d2/dd2/class_zinnia_1_1_data_1_1_type_1_1_transformation_1_1_conversion_1_1_vector2_to_vector3.html][API Docs]]
-
-****** TODO Vector3ToFloat
-       [[file:../vrtk-wiki/zinnia-api/d0/d38/class_zinnia_1_1_data_1_1_type_1_1_transformation_1_1_conversion_1_1_vector3_to_float.html][API Docs]]
-
-****** TODO Vector3ToVector2
-       [[file:../vrtk-wiki/zinnia-api/d5/d3d/class_zinnia_1_1_data_1_1_type_1_1_transformation_1_1_conversion_1_1_vector3_to_vector2.html][API Docs]]
-
-***** TODO FloatRangeValueRemapper
-      [[file:../vrtk-wiki/zinnia-api/dd/d34/class_zinnia_1_1_data_1_1_type_1_1_transformation_1_1_float_range_value_remapper.html][API Docs]]
-
-***** TODO Transformer
-      [[file:../vrtk-wiki/zinnia-api/d0/d23/class_zinnia_1_1_data_1_1_type_1_1_transformation_1_1_transformer.html][API Docs]]
-
-***** TODO Vector3MagnitudeSetter
-      [[file:../vrtk-wiki/zinnia-api/d7/d44/class_zinnia_1_1_data_1_1_type_1_1_transformation_1_1_vector3_magnitude_setter.html][API Docs]]
-
-***** TODO Vector3Restrictor
-      [[file:../vrtk-wiki/zinnia-api/df/d56/class_zinnia_1_1_data_1_1_type_1_1_transformation_1_1_vector3_restrictor.html][API Docs]]
-
+****** TODO AngleToVector2Direction                                     :api:
+****** TODO BooleanToFloat                                              :api:
+****** TODO FloatToBoolean                                              :api:
+****** TODO FloatToVector2                                              :api:
+****** TODO FloatToVector3                                              :api:
+****** TODO Vector2ToAngle                                              :api:
+****** TODO Vector2ToFloat                                              :api:
+****** TODO Vector2ToVector3                                            :api:
+****** TODO Vector3ToFloat                                              :api:
+****** TODO Vector3ToVector2                                            :api:
+***** TODO FloatRangeValueRemapper                                      :api:
+***** TODO Transformer                                                  :api:
+***** TODO Vector3MagnitudeSetter                                       :api:
+***** TODO Vector3Restrictor                                            :api:
 **** TODO FloatRange
 **** TODO HeapAllocationFreeReadOnlyList
-**** TODO SerializableType
-     [[file:../vrtk-wiki/zinnia-api/d3/d9b/class_zinnia_1_1_data_1_1_type_1_1_serializable_type.html][API Docs]]
-
-**** TODO SurfaceData
-     [[file:../vrtk-wiki/zinnia-api/dc/d32/class_zinnia_1_1_data_1_1_type_1_1_surface_data.html][API Docs]]
-
-**** TODO TransformData
-     [[file:../vrtk-wiki/zinnia-api/d2/dc6/class_zinnia_1_1_data_1_1_type_1_1_transform_data.html][API Docs]]
-
+**** TODO SerializableType                                              :api:
+**** TODO SurfaceData                                                   :api:
+**** TODO TransformData                                                 :api:
 **** TODO Vector3State
 ** TODO +Event
 *** TODO +Proxy
-**** TODO EmptyEventProxyEmitter
-     [[file:../vrtk-wiki/zinnia-api/d3/de4/class_zinnia_1_1_event_1_1_proxy_1_1_empty_event_proxy_emitter.html][API Docs]]
-
-**** TODO EventProxyEmitter
-     [[file:../vrtk-wiki/zinnia-api/d6/d15/class_zinnia_1_1_event_1_1_proxy_1_1_event_proxy_emitter.html][API Docs]]
-
-**** TODO FloatEventProxyEmitter
-     [[file:../vrtk-wiki/zinnia-api/d9/d64/class_zinnia_1_1_event_1_1_proxy_1_1_float_event_proxy_emitter.html][API Docs]]
-
-**** TODO GameObjectEventProxyEmitter
-     [[file:../vrtk-wiki/zinnia-api/db/da4/class_zinnia_1_1_event_1_1_proxy_1_1_game_object_event_proxy_emitter.html][API Docs]]
-
-**** TODO RestrictableSingleEventProxyEmitter
-     [[file:../vrtk-wiki/zinnia-api/df/d94/class_zinnia_1_1_event_1_1_proxy_1_1_restrictable_single_event_proxy_emitter.html][API Docs]]
-
-**** TODO SingleEventProxyEmitter
-     [[file:../vrtk-wiki/zinnia-api/d7/d74/class_zinnia_1_1_event_1_1_proxy_1_1_single_event_proxy_emitter.html][API Docs]]
-
-**** TODO SurfaceDataProxyEmitter
-     [[file:../vrtk-wiki/zinnia-api/d8/d49/class_zinnia_1_1_event_1_1_proxy_1_1_surface_data_proxy_emitter.html][API Docs]]
-
-**** TODO TransformDataProxyEmitter
-     [[file:../vrtk-wiki/zinnia-api/d0/d34/class_zinnia_1_1_event_1_1_proxy_1_1_transform_data_proxy_emitter.html][API Docs]]
-
-*** TODO BehaviourEnabledObserver
-    [[file:../vrtk-wiki/zinnia-api/d9/d44/class_zinnia_1_1_event_1_1_behaviour_enabled_observer.html][API Docs]]
-
+**** TODO EmptyEventProxyEmitter                                        :api:
+**** TODO EventProxyEmitter                                             :api:
+**** TODO FloatEventProxyEmitter                                        :api:
+**** TODO GameObjectEventProxyEmitter                                   :api:
+**** TODO RestrictableSingleEventProxyEmitter                           :api:
+**** TODO SingleEventProxyEmitter                                       :api:
+**** TODO SurfaceDataProxyEmitter                                       :api:
+**** TODO TransformDataProxyEmitter                                     :api:
+*** TODO BehaviourEnabledObserver                                       :api:
 ** TODO +Extension
-*** TODO ArraySortExtensions
-    [[file:../vrtk-wiki/zinnia-api/d9/d68/class_zinnia_1_1_extension_1_1_array_sort_extensions.html][API Docs]]
-
-*** TODO BehaviourExtensions
-    [[file:../vrtk-wiki/zinnia-api/d7/dda/class_zinnia_1_1_extension_1_1_behaviour_extensions.html][API Docs]]
-
-*** TODO ColliderExtensions
-    [[file:../vrtk-wiki/zinnia-api/dc/dfe/class_zinnia_1_1_extension_1_1_collider_extensions.html][API Docs]]
-
-*** TODO ComponentExtensions
-    [[file:../vrtk-wiki/zinnia-api/d1/d33/class_zinnia_1_1_extension_1_1_component_extensions.html][API Docs]]
-
-*** TODO FloatExtensions
-    [[file:../vrtk-wiki/zinnia-api/d3/de9/class_zinnia_1_1_extension_1_1_float_extensions.html][API Docs]]
-
-*** TODO GameObjectExtensions
-    [[file:../vrtk-wiki/zinnia-api/db/d03/class_zinnia_1_1_extension_1_1_game_object_extensions.html][API Docs]]
-
-*** TODO IReadOnlyCollectionExtensions
-    [[file:../vrtk-wiki/zinnia-api/d7/d81/class_zinnia_1_1_extension_1_1_i_read_only_collection_extensions.html][API Docs]]
-
-*** TODO RuleContainerExtensions
-    [[file:../vrtk-wiki/zinnia-api/d3/dea/class_zinnia_1_1_extension_1_1_rule_container_extensions.html][API Docs]]
-
-*** TODO TransformDataExtensions
-    [[file:../vrtk-wiki/zinnia-api/d0/de0/class_zinnia_1_1_extension_1_1_transform_data_extensions.html][API Docs]]
-
-*** TODO TransformExtensions
-    [[file:../vrtk-wiki/zinnia-api/d2/dba/class_zinnia_1_1_extension_1_1_transform_extensions.html][API Docs]]
-
-*** TODO Vector2Extensions
-    [[file:../vrtk-wiki/zinnia-api/dd/dfe/class_zinnia_1_1_extension_1_1_vector2_extensions.html][API Docs]]
-
-*** TODO Vector3Extensions
-    [[file:../vrtk-wiki/zinnia-api/d5/d57/class_zinnia_1_1_extension_1_1_vector3_extensions.html][API Docs]]
-
+*** TODO ArraySortExtensions                                            :api:
+*** TODO BehaviourExtensions                                            :api:
+*** TODO ColliderExtensions                                             :api:
+*** TODO ComponentExtensions                                            :api:
+*** TODO FloatExtensions                                                :api:
+*** TODO GameObjectExtensions                                           :api:
+*** TODO IReadOnlyCollectionExtensions                                  :api:
+*** TODO RuleContainerExtensions                                        :api:
+*** TODO TransformDataExtensions                                        :api:
+*** TODO TransformExtensions                                            :api:
+*** TODO Vector2Extensions                                              :api:
+*** TODO Vector3Extensions                                              :api:
 ** TODO +Haptics
 *** TODO +Collection
-**** TODO HapticProcessObservableList
-     [[file:../vrtk-wiki/zinnia-api/de/de1/class_zinnia_1_1_haptics_1_1_collection_1_1_haptic_process_observable_list.html][API Docs]]
-
-*** TODO AudioClipHapticPulser
-    [[file:../vrtk-wiki/zinnia-api/d7/dee/class_zinnia_1_1_haptics_1_1_audio_clip_haptic_pulser.html][API Docs]]
-
-*** TODO AudioSourceHapticPulser
-    [[file:../vrtk-wiki/zinnia-api/d7/d72/class_zinnia_1_1_haptics_1_1_audio_source_haptic_pulser.html][API Docs]]
-
-*** TODO HapticProcess
-    [[file:../vrtk-wiki/zinnia-api/d6/d06/class_zinnia_1_1_haptics_1_1_haptic_process.html][API Docs]]
-
-*** TODO HapticProcessor
-    [[file:../vrtk-wiki/zinnia-api/d5/d4e/class_zinnia_1_1_haptics_1_1_haptic_processor.html][API Docs]]
-
-*** TODO HapticPulser
-    [[file:../vrtk-wiki/zinnia-api/d7/d34/class_zinnia_1_1_haptics_1_1_haptic_pulser.html][API Docs]]
-
-*** TODO RoutineHapticPulser
-    [[file:../vrtk-wiki/zinnia-api/d8/dc8/class_zinnia_1_1_haptics_1_1_routine_haptic_pulser.html][API Docs]]
-
+**** TODO HapticProcessObservableList                                   :api:
+*** TODO AudioClipHapticPulser                                          :api:
+*** TODO AudioSourceHapticPulser                                        :api:
+*** TODO HapticProcess                                                  :api:
+*** TODO HapticProcessor                                                :api:
+*** TODO HapticPulser                                                   :api:
+*** TODO RoutineHapticPulser                                            :api:
 *** TODO TimedHapticPulser
-*** TODO XRNodeHapticPulser
-    [[file:../vrtk-wiki/zinnia-api/dc/d08/class_zinnia_1_1_haptics_1_1_x_r_node_haptic_pulser.html][API Docs]]
-
+*** TODO XRNodeHapticPulser                                             :api:
 ** TODO +Pointer
 *** TODO +Operation
 **** TODO +Mutation
-***** TODO PointerElementPropertyMutator
-      [[file:../vrtk-wiki/zinnia-api/dd/def/class_zinnia_1_1_pointer_1_1_operation_1_1_mutation_1_1_pointer_element_property_mutator.html][API Docs]]
-
-*** TODO ObjectPointer
-    [[file:../vrtk-wiki/zinnia-api/df/daa/class_zinnia_1_1_pointer_1_1_object_pointer.html][API Docs]]
-
-*** TODO PointerElement
-    [[file:../vrtk-wiki/zinnia-api/d1/dcc/class_zinnia_1_1_pointer_1_1_pointer_element.html][API Docs]]
-
+***** TODO PointerElementPropertyMutator                                :api:
+*** TODO ObjectPointer                                                  :api:
+*** TODO PointerElement                                                 :api:
 ** TODO +Process
 *** TODO +Component
-**** TODO GameObjectSourceTargetProcessor
-     [[file:../vrtk-wiki/zinnia-api/dc/dd4/class_zinnia_1_1_process_1_1_component_1_1_game_object_source_target_processor.html][API Docs]]
-
-**** TODO SourceTargetProcessor
-     [[file:../vrtk-wiki/zinnia-api/d0/d55/class_zinnia_1_1_process_1_1_component_1_1_source_target_processor.html][API Docs]]
-
+**** TODO GameObjectSourceTargetProcessor                               :api:
+**** TODO SourceTargetProcessor                                         :api:
 *** TODO +Moment
 **** TODO +Collection
-***** TODO MomentProcessObservableList
-      [[file:../vrtk-wiki/zinnia-api/de/db3/class_zinnia_1_1_process_1_1_moment_1_1_collection_1_1_moment_process_observable_list.html][API Docs]]
-
-**** TODO CompositeProcess
-     [[file:../vrtk-wiki/zinnia-api/d7/dc7/class_zinnia_1_1_process_1_1_moment_1_1_composite_process.html][API Docs]]
-
-**** TODO MomentProcess
-     [[file:../vrtk-wiki/zinnia-api/da/dc7/class_zinnia_1_1_process_1_1_moment_1_1_moment_process.html][API Docs]]
-
-**** TODO MomentProcessor
-     [[file:../vrtk-wiki/zinnia-api/da/d64/class_zinnia_1_1_process_1_1_moment_1_1_moment_processor.html][API Docs]]
-
-*** TODO EventProcess
-    [[file:../vrtk-wiki/zinnia-api/d0/d80/class_zinnia_1_1_process_1_1_event_process.html][API Docs]]
-
-*** TODO IProcessable
-    [[file:../vrtk-wiki/zinnia-api/d8/d03/interface_zinnia_1_1_process_1_1_i_processable.html][API Docs]]
-
-*** TODO ProcessContainer
-    [[file:../vrtk-wiki/zinnia-api/dd/dd5/class_zinnia_1_1_process_1_1_process_container.html][API Docs]]
-
+***** TODO MomentProcessObservableList                                  :api:
+**** TODO CompositeProcess                                              :api:
+**** TODO MomentProcess                                                 :api:
+**** TODO MomentProcessor                                               :api:
+*** TODO EventProcess                                                   :api:
+*** TODO IProcessable                                                   :api:
+*** TODO ProcessContainer                                               :api:
 ** TODO +Rule
 *** TODO +Collection
-**** TODO RuleContainerObservableList
-     [[file:../vrtk-wiki/zinnia-api/d3/d31/class_zinnia_1_1_rule_1_1_collection_1_1_rule_container_observable_list.html][API Docs]]
-
-**** TODO RulesMatcherElementObservableList
-     [[file:../vrtk-wiki/zinnia-api/de/d92/class_zinnia_1_1_rule_1_1_collection_1_1_rules_matcher_element_observable_list.html][API Docs]]
-
-*** TODO ActiveInHierarchyRule
-    [[file:../vrtk-wiki/zinnia-api/db/d6e/class_zinnia_1_1_rule_1_1_active_in_hierarchy_rule.html][API Docs]]
-
-*** TODO AllRule
-    [[file:../vrtk-wiki/zinnia-api/de/d19/class_zinnia_1_1_rule_1_1_all_rule.html][API Docs]]
-
-*** TODO AnyBehaviourEnabledRule
-    [[file:../vrtk-wiki/zinnia-api/d7/de0/class_zinnia_1_1_rule_1_1_any_behaviour_enabled_rule.html][API Docs]]
-
-*** TODO AnyComponentTypeRule
-    [[file:../vrtk-wiki/zinnia-api/d5/d13/class_zinnia_1_1_rule_1_1_any_component_type_rule.html][API Docs]]
-
-*** TODO AnyLayerRule
-    [[file:../vrtk-wiki/zinnia-api/d7/d9b/class_zinnia_1_1_rule_1_1_any_layer_rule.html][API Docs]]
-
-*** TODO AnyRule
-    [[file:../vrtk-wiki/zinnia-api/d9/dd0/class_zinnia_1_1_rule_1_1_any_rule.html][API Docs]]
-
-*** TODO AnyTagRule
-    [[file:../vrtk-wiki/zinnia-api/dc/d33/class_zinnia_1_1_rule_1_1_any_tag_rule.html][API Docs]]
-
-*** TODO GameObjectRule
-    [[file:../vrtk-wiki/zinnia-api/dd/d9f/class_zinnia_1_1_rule_1_1_game_object_rule.html][API Docs]]
-
-*** TODO IRule
-    [[file:../vrtk-wiki/zinnia-api/d4/dd5/interface_zinnia_1_1_rule_1_1_i_rule.html][API Docs]]
-
-*** TODO ListContainsRule
-    [[file:../vrtk-wiki/zinnia-api/d0/d92/class_zinnia_1_1_rule_1_1_list_contains_rule.html][API Docs]]
-
-*** TODO NegationRule
-    [[file:../vrtk-wiki/zinnia-api/d9/d69/class_zinnia_1_1_rule_1_1_negation_rule.html][API Docs]]
-
-*** TODO Rule
-    [[file:../vrtk-wiki/zinnia-api/d4/dad/class_zinnia_1_1_rule_1_1_rule.html][API Docs]]
-
-*** TODO RuleContainer
-    [[file:../vrtk-wiki/zinnia-api/d7/d35/class_zinnia_1_1_rule_1_1_rule_container.html][API Docs]]
-
-*** TODO RulesMatcher
-    [[file:../vrtk-wiki/zinnia-api/db/da5/class_zinnia_1_1_rule_1_1_rules_matcher.html][API Docs]]
-
+**** TODO RuleContainerObservableList                                   :api:
+**** TODO RulesMatcherElementObservableList                             :api:
+*** TODO ActiveInHierarchyRule                                          :api:
+*** TODO AllRule                                                        :api:
+*** TODO AnyBehaviourEnabledRule                                        :api:
+*** TODO AnyComponentTypeRule                                           :api:
+*** TODO AnyLayerRule                                                   :api:
+*** TODO AnyRule                                                        :api:
+*** TODO AnyTagRule                                                     :api:
+*** TODO GameObjectRule                                                 :api:
+*** TODO IRule                                                          :api:
+*** TODO ListContainsRule                                               :api:
+*** TODO NegationRule                                                   :api:
+*** TODO Rule                                                           :api:
+*** TODO RuleContainer                                                  :api:
+*** TODO RulesMatcher                                                   :api:
 ** TODO +Tracking
 *** TODO +CameraRig
 **** TODO +Collection
-***** TODO LinkedAliasAssociationCollectionObservableList
-      [[file:../vrtk-wiki/zinnia-api/d1/d7f/class_zinnia_1_1_tracking_1_1_camera_rig_1_1_collection_1_1_linked_alias_association_collection_observable_list.html][API Docs]]
-
+***** TODO LinkedAliasAssociationCollectionObservableList               :api:
 **** TODO +Operation
 ***** TODO +Extraction
-****** TODO PlayAreaDimensionsExtractor
-       [[file:../vrtk-wiki/zinnia-api/d2/d41/class_zinnia_1_1_tracking_1_1_camera_rig_1_1_operation_1_1_extraction_1_1_play_area_dimensions_extractor.html][API Docs]]
-
+****** TODO PlayAreaDimensionsExtractor                                 :api:
 **** TODO LinkedAliasAssocationCollection
 *** TODO +Collision
 **** TODO +Active
 ***** TODO +Event
 ****** TODO +Proxy
-******* TODO ActiveCollisionConsumerEventProxyEmitter
-	[[file:../vrtk-wiki/zinnia-api/d3/d04/class_zinnia_1_1_tracking_1_1_collision_1_1_active_1_1_event_1_1_proxy_1_1_active_collision_consumer_event_proxy_emitter.html][API Docs]]
-
-******* TODO ActiveCollisionsContainerEventProxyEmitter
-	[[file:../vrtk-wiki/zinnia-api/de/d5c/class_zinnia_1_1_tracking_1_1_collision_1_1_active_1_1_event_1_1_proxy_1_1_active_collisions_container_event_proxy_emitter.html][API Docs]]
-
+******* TODO ActiveCollisionConsumerEventProxyEmitter                   :api:
+******* TODO ActiveCollisionsContainerEventProxyEmitter                 :api:
 ***** TODO +Operation
 ****** TODO +Extraction
-******* TODO NotifierContainerExtractor
-	[[file:../vrtk-wiki/zinnia-api/dc/d70/class_zinnia_1_1_tracking_1_1_collision_1_1_active_1_1_operation_1_1_extraction_1_1_notifier_container_extractor.html][API Docs]]
-
-******* TODO NotifierTargetExtractor
-	[[file:../vrtk-wiki/zinnia-api/d0/d48/class_zinnia_1_1_tracking_1_1_collision_1_1_active_1_1_operation_1_1_extraction_1_1_notifier_target_extractor.html][API Docs]]
-
-******* TODO PublisherContainerExtractor
-	[[file:../vrtk-wiki/zinnia-api/d5/d68/class_zinnia_1_1_tracking_1_1_collision_1_1_active_1_1_operation_1_1_extraction_1_1_publisher_container_extractor.html][API Docs]]
-
-****** TODO NearestSorter
-       [[file:../vrtk-wiki/zinnia-api/d7/d2c/class_zinnia_1_1_tracking_1_1_collision_1_1_active_1_1_operation_1_1_nearest_sorter.html][API Docs]]
-
-****** TODO OrderReverser
-       [[file:../vrtk-wiki/zinnia-api/dc/d82/class_zinnia_1_1_tracking_1_1_collision_1_1_active_1_1_operation_1_1_order_reverser.html][API Docs]]
-
-****** TODO Slicer
-       [[file:../vrtk-wiki/zinnia-api/df/df5/class_zinnia_1_1_tracking_1_1_collision_1_1_active_1_1_operation_1_1_slicer.html][API Docs]]
-
-***** TODO ActiveCollisionConsumer
-      [[file:../vrtk-wiki/zinnia-api/d4/d0c/class_zinnia_1_1_tracking_1_1_collision_1_1_active_1_1_active_collision_consumer.html][API Docs]]
-
-***** TODO ActiveCollisionPublisher
-      [[file:../vrtk-wiki/zinnia-api/d7/dd9/class_zinnia_1_1_tracking_1_1_collision_1_1_active_1_1_active_collision_publisher.html][API Docs]]
-
-***** TODO ActiveCollisionsContainer
-      [[file:../vrtk-wiki/zinnia-api/d8/db2/class_zinnia_1_1_tracking_1_1_collision_1_1_active_1_1_active_collisions_container.html][API Docs]]
-
-***** TODO CollisionPointContainer
-      [[file:../vrtk-wiki/zinnia-api/d8/dd7/class_zinnia_1_1_tracking_1_1_collision_1_1_active_1_1_collision_point_container.html][API Docs]]
-
+******* TODO NotifierContainerExtractor                                 :api:
+******* TODO NotifierTargetExtractor                                    :api:
+******* TODO PublisherContainerExtractor                                :api:
+****** TODO NearestSorter                                               :api:
+****** TODO OrderReverser                                               :api:
+****** TODO Slicer                                                      :api:
+***** TODO ActiveCollisionConsumer                                      :api:
+***** TODO ActiveCollisionPublisher                                     :api:
+***** TODO ActiveCollisionsContainer                                    :api:
+***** TODO CollisionPointContainer                                      :api:
 **** TODO +Event
 ***** TODO +Proxy
-****** TODO CollisionNotifierEventProxyEmitter
-       [[file:../vrtk-wiki/zinnia-api/d7/d33/class_zinnia_1_1_tracking_1_1_collision_1_1_event_1_1_proxy_1_1_collision_notifier_event_proxy_emitter.html][API Docs]]
-
-**** TODO CollisionIgnorer
-     [[file:../vrtk-wiki/zinnia-api/df/de4/class_zinnia_1_1_tracking_1_1_collision_1_1_collision_ignorer.html][API Docs]]
-
-**** TODO CollisionNotifier
-     [[file:../vrtk-wiki/zinnia-api/d1/de4/class_zinnia_1_1_tracking_1_1_collision_1_1_collision_notifier.html][API Docs]]
-
-**** TODO CollisionTracker
-     [[file:../vrtk-wiki/zinnia-api/dc/def/class_zinnia_1_1_tracking_1_1_collision_1_1_collision_tracker.html][API Docs]]
-
+****** TODO CollisionNotifierEventProxyEmitter                          :api:
+**** TODO CollisionIgnorer                                              :api:
+**** TODO CollisionNotifier                                             :api:
+**** TODO CollisionTracker                                              :api:
 *** TODO +Follow
 **** TODO +Modifier
 ***** TODO +Property
 ****** TODO +Position
-******* TODO RigidbodyVelocity
-	[[file:../vrtk-wiki/zinnia-api/d8/dbb/class_zinnia_1_1_tracking_1_1_follow_1_1_modifier_1_1_property_1_1_position_1_1_rigidbody_velocity.html][API Docs]]
-
-******* TODO TransformPosition
-	[[file:../vrtk-wiki/zinnia-api/d4/d63/class_zinnia_1_1_tracking_1_1_follow_1_1_modifier_1_1_property_1_1_position_1_1_transform_position.html][API Docs]]
-
+******* TODO RigidbodyVelocity                                          :api:
+******* TODO TransformPosition                                          :api:
 ****** TODO +Rotation
-******* TODO RigidbodyAngularVelocity
-	[[file:../vrtk-wiki/zinnia-api/d6/dae/class_zinnia_1_1_tracking_1_1_follow_1_1_modifier_1_1_property_1_1_rotation_1_1_rigidbody_angular_velocity.html][API Docs]]
-
-******* TODO RigidbodyForceAtPosition
-	[[file:../vrtk-wiki/zinnia-api/d0/d29/class_zinnia_1_1_tracking_1_1_follow_1_1_modifier_1_1_property_1_1_rotation_1_1_rigidbody_force_at_position.html][API Docs]]
-
-******* TODO TransformPositionDifferenceRotation
-	[[file:../vrtk-wiki/zinnia-api/da/d16/class_zinnia_1_1_tracking_1_1_follow_1_1_modifier_1_1_property_1_1_rotation_1_1_transform_position_difference_rotation.html][API Docs]]
-
-******* TODO TransformRotation
-	[[file:../vrtk-wiki/zinnia-api/d5/d22/class_zinnia_1_1_tracking_1_1_follow_1_1_modifier_1_1_property_1_1_rotation_1_1_transform_rotation.html][API Docs]]
-
+******* TODO RigidbodyAngularVelocity                                   :api:
+******* TODO RigidbodyForceAtPosition                                   :api:
+******* TODO TransformPositionDifferenceRotation                        :api:
+******* TODO TransformRotation                                          :api:
 ****** TODO +Scale
-******* TODO TransformScale
-	[[file:../vrtk-wiki/zinnia-api/d7/d80/class_zinnia_1_1_tracking_1_1_follow_1_1_modifier_1_1_property_1_1_scale_1_1_transform_scale.html][API Docs]]
-
-****** TODO PropertyModifier
-       [[file:../vrtk-wiki/zinnia-api/d3/d97/class_zinnia_1_1_tracking_1_1_follow_1_1_modifier_1_1_property_1_1_property_modifier.html][API Docs]]
-
-***** TODO FollowModifier
-      [[file:../vrtk-wiki/zinnia-api/da/dec/class_zinnia_1_1_tracking_1_1_follow_1_1_modifier_1_1_follow_modifier.html][API Docs]]
-
+******* TODO TransformScale                                             :api:
+****** TODO PropertyModifier                                            :api:
+***** TODO FollowModifier                                               :api:
 **** TODO +Operation
 ***** TODO +Extraction
-****** TODO ObjectDistanceComparatorEventDataExtractor
-       [[file:../vrtk-wiki/zinnia-api/d0/d77/class_zinnia_1_1_tracking_1_1_follow_1_1_operation_1_1_extraction_1_1_object_distance_comparator_event_data_extractor.html][API Docs]]
-
-**** TODO ObjectDistanceComparator
-     [[file:../vrtk-wiki/zinnia-api/de/dd0/class_zinnia_1_1_tracking_1_1_follow_1_1_object_distance_comparator.html][API Docs]]
-
-**** TODO ObjectFollower
-     [[file:../vrtk-wiki/zinnia-api/d1/d01/class_zinnia_1_1_tracking_1_1_follow_1_1_object_follower.html][API Docs]]
-
+****** TODO ObjectDistanceComparatorEventDataExtractor                  :api:
+**** TODO ObjectDistanceComparator                                      :api:
+**** TODO ObjectFollower                                                :api:
 *** TODO +Modification
 **** TODO +Operation
 ***** TODO +Extraction
-****** TODO TransformPropertyApplierEventDataExtractor
-       [[file:../vrtk-wiki/zinnia-api/df/d8b/class_zinnia_1_1_tracking_1_1_modification_1_1_operation_1_1_extraction_1_1_transform_property_applier_event_data_extractor.html][API Docs]]
-
-**** TODO ComponentEnabledStateModifier
-     [[file:../vrtk-wiki/zinnia-api/df/d54/class_zinnia_1_1_tracking_1_1_modification_1_1_component_enabled_state_modifier.html][API Docs]]
-
-**** TODO DirectionModifier
-     [[file:../vrtk-wiki/zinnia-api/dd/d7f/class_zinnia_1_1_tracking_1_1_modification_1_1_direction_modifier.html][API Docs]]
-
-**** TODO GameObjectStateMirror
-     [[file:../vrtk-wiki/zinnia-api/d4/d2e/class_zinnia_1_1_tracking_1_1_modification_1_1_game_object_state_mirror.html][API Docs]]
-
-**** TODO GameObjectStateSwitcher
-     [[file:../vrtk-wiki/zinnia-api/de/d2d/class_zinnia_1_1_tracking_1_1_modification_1_1_game_object_state_switcher.html][API Docs]]
-
-**** TODO PinchScaler
-     [[file:../vrtk-wiki/zinnia-api/d8/d9f/class_zinnia_1_1_tracking_1_1_modification_1_1_pinch_scaler.html][API Docs]]
-
-**** TODO PointNormalRotator
-     [[file:../vrtk-wiki/zinnia-api/db/d91/class_zinnia_1_1_tracking_1_1_modification_1_1_point_normal_rotator.html][API Docs]]
-
-**** TODO TransformPropertyApplier
-     [[file:../vrtk-wiki/zinnia-api/da/d91/class_zinnia_1_1_tracking_1_1_modification_1_1_transform_property_applier.html][API Docs]]
-
+****** TODO TransformPropertyApplierEventDataExtractor                  :api:
+**** TODO ComponentEnabledStateModifier                                 :api:
+**** TODO DirectionModifier                                             :api:
+**** TODO GameObjectStateMirror                                         :api:
+**** TODO GameObjectStateSwitcher                                       :api:
+**** TODO PinchScaler                                                   :api:
+**** TODO PointNormalRotator                                            :api:
+**** TODO TransformPropertyApplier                                      :api:
 *** TODO +Query
-**** TODO FacingQuery
-     [[file:../vrtk-wiki/zinnia-api/d3/da4/class_zinnia_1_1_tracking_1_1_query_1_1_facing_query.html][API Docs]]
-
-**** TODO ObscuranceQuery
-     [[file:../vrtk-wiki/zinnia-api/de/d8a/class_zinnia_1_1_tracking_1_1_query_1_1_obscurance_query.html][API Docs]]
-
+**** TODO FacingQuery                                                   :api:
+**** TODO ObscuranceQuery                                               :api:
 *** TODO +Velocity
 **** TODO +Collection
 ***** TODO VelocityTrackerObservableList
-**** TODO ArtificialVelocityApplier
-     [[file:../vrtk-wiki/zinnia-api/db/d7b/class_zinnia_1_1_tracking_1_1_velocity_1_1_artificial_velocity_applier.html][API Docs]]
-
-**** TODO AverageVelocityEstimator
-     [[file:../vrtk-wiki/zinnia-api/d0/dfe/class_zinnia_1_1_tracking_1_1_velocity_1_1_average_velocity_estimator.html][API Docs]]
-
-**** TODO ComponentTrackerProxy
-     [[file:../vrtk-wiki/zinnia-api/d3/dd8/class_zinnia_1_1_tracking_1_1_velocity_1_1_component_tracker_proxy.html][API Docs]]
-
-**** TODO VelocityApplier
-     [[file:../vrtk-wiki/zinnia-api/dc/d7f/class_zinnia_1_1_tracking_1_1_velocity_1_1_velocity_applier.html][API Docs]]
-
-**** TODO VelocityEmitter
-     [[file:../vrtk-wiki/zinnia-api/de/dc3/class_zinnia_1_1_tracking_1_1_velocity_1_1_velocity_emitter.html][API Docs]]
-
-**** TODO VelocityMultiplier
-     [[file:../vrtk-wiki/zinnia-api/db/d42/class_zinnia_1_1_tracking_1_1_velocity_1_1_velocity_multiplier.html][API Docs]]
-
-**** TODO VelocityTracker
-     [[file:../vrtk-wiki/zinnia-api/d6/d78/class_zinnia_1_1_tracking_1_1_velocity_1_1_velocity_tracker.html][API Docs]]
-
-**** TODO VelocityTrackerProcessor
-     [[file:../vrtk-wiki/zinnia-api/d7/da6/class_zinnia_1_1_tracking_1_1_velocity_1_1_velocity_tracker_processor.html][API Docs]]
-
-**** TODO XRNodeVelocityEstimator
-     [[file:../vrtk-wiki/zinnia-api/d4/d1d/class_zinnia_1_1_tracking_1_1_velocity_1_1_x_r_node_velocity_estimator.html][API Docs]]
-
-*** TODO SurfaceLocator
-    [[file:../vrtk-wiki/zinnia-api/d6/d1c/class_zinnia_1_1_tracking_1_1_surface_locator.html][API Docs]]
-
+**** TODO ArtificialVelocityApplier                                     :api:
+**** TODO AverageVelocityEstimator                                      :api:
+**** TODO ComponentTrackerProxy                                         :api:
+**** TODO VelocityApplier                                               :api:
+**** TODO VelocityEmitter                                               :api:
+**** TODO VelocityMultiplier                                            :api:
+**** TODO VelocityTracker                                               :api:
+**** TODO VelocityTrackerProcessor                                      :api:
+**** TODO XRNodeVelocityEstimator                                       :api:
+*** TODO SurfaceLocator                                                 :api:
 ** TODO +Utility
 *** TODO BeizerCurveGenerator
-*** TODO CountdownTimer
-    [[file:../vrtk-wiki/zinnia-api/d6/df9/class_zinnia_1_1_utility_1_1_countdown_timer.html][API Docs]]
-
-*** TODO InterfaceContainer
-    [[file:../vrtk-wiki/zinnia-api/da/d4f/class_zinnia_1_1_utility_1_1_interface_container.html][API Docs]]
-
+*** TODO CountdownTimer                                                 :api:
+*** TODO InterfaceContainer                                             :api:
 ** TODO +Visual
-*** TODO CameraColorOverlay
-    [[file:../vrtk-wiki/zinnia-api/d4/d4b/class_zinnia_1_1_visual_1_1_camera_color_overlay.html][API Docs]]
-
-*** TODO PointsRenderer
-    [[file:../vrtk-wiki/zinnia-api/d6/d80/class_zinnia_1_1_visual_1_1_points_renderer.html][API Docs]]
-
-
+*** TODO CameraColorOverlay                                             :api:
+*** TODO PointsRenderer                                                 :api:
 

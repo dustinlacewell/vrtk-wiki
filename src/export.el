@@ -75,7 +75,33 @@
 (defun link-for-class (class-name)
   (cdr (assoc-string class-name records)))
 
-;; Export org to html
+(defun my-html-headline-format (text backend info)
+  "Ensure dots in headlines."
+  (when (org-export-derived-backend-p backend 'html)
+    (save-match-data
+      nil
+      )))
+
+(eval-after-load 'ox
+  '(progn
+     (add-to-list 'org-export-filter-headline-functions
+                  'my-html-headline-format)))
+
+(defun my-html-headline-formatter (todo todo-type priority text tags info)
+  "Format a headline with a link to itself."
+  ;; (let* ((headline (get-text-property 0 :parent text))
+  ;;        (id (or (org-element-property :CUSTOM_ID headline)
+  ;;                (org-export-get-reference headline info)
+  ;;                (org-element-property :ID headline)))
+  ;;        (link (if id
+  ;;                  (format "<a href=\"#%s\">%s</a>" id text)
+  ;;                text))))
+  (let ((result (org-html-format-headline-default-function todo todo-type priority text tags info))
+	(link (link-for-class text)))
+    (if (and link (seq-find (lambda (o) (string-equal "api" o)) tags))
+	(format "<span class=\"api-link\" data-link=\"%s\">%s</span>" link result)
+      result)))
+
 (defun build-site ()
   (interactive)
   (defun get-string-from-file (filePath)
@@ -87,15 +113,16 @@
   (let ((current-directory (file-name-directory (buffer-file-name)))
 	(html-head (get-string-from-file "head.html")))
     (setq org-html-preamble "<h1><a href=\"/vrtk-wiki/\">VRTK Wiki</a></h1>")
-    (setq org-export-headline-level 10)
     (setq org-publish-project-alist
 	  `(("docs"
 	     :base-directory ,current-directory
 	     :publishing-directory ,(concat current-directory "../docs/")
 	     :publishing-function org-html-publish-to-html
+	     :html-format-headline-function my-html-headline-formatter
 	     :html-head ,html-head
 	     :with-todo-keywords nil
 	     :section-numbers nil
+	     :headline-levels 5
 	     )))
     (org-publish-project "docs" t)))
 

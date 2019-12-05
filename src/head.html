@@ -10,14 +10,27 @@
       padding-top: 1em;
       margin-left: 300px;
   }
+  #table-of-contents span.tag {
+      display: none;
+  }
+  #content > div[class^="outline-"] span.tag {
+      background-color: transparent;
+  }
+
+  #content > div[class^="outline-"] span.tag span.api a {
+    display: inline-block;
+    padding: .8em;
+  }
 </style>
 <script>
   jQuery(function() {
-      var links = $('[class^="outline-text-"] p:first-child a:contains("API Docs")');
-      links.text("🗎");
-      links.css("position", "relative");
-      links.css("left", "-1.4em");
-      links.css("font-size", "1.5em");
-      links.css("float", "left");
+      var headers = $('#content > div[class^="outline-"] .api-link');
+      for (i = 0; i < headers.length; i++) {
+	  var header = $(headers[i]);
+	  var link = header.data('link');
+	  header
+	      .find('.api')
+	      .wrapInner("<a href=\"/Unity/vrtk-wiki/docs/zinnia-api" + link + "\"></a>");
+      }
   });
 </script>

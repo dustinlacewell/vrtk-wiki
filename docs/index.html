@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-12-04 Wed 08:30 -->
+<!-- 2019-12-05 Thu 16:14 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -191,15 +191,28 @@
       padding-top: 1em;
       margin-left: 300px;
   }
+  #table-of-contents span.tag {
+      display: none;
+  }
+  #content > div[class^="outline-"] span.tag {
+      background-color: transparent;
+  }
+
+  #content > div[class^="outline-"] span.tag span.api a {
+    display: inline-block;
+    padding: .8em;
+  }
 </style>
 <script>
   jQuery(function() {
-      var links = $('[class^="outline-text-"] p:first-child a:contains("API Docs")');
-      links.text(" ");
-      links.css("position", "relative");
-      links.css("left", "-1.4em");
-      links.css("font-size", "1.5em");
-      links.css("float", "left");
+      var headers = $('#content > div[class^="outline-"] .api-link');
+      for (i = 0; i < headers.length; i++) {
+	  var header = $(headers[i]);
+	  var link = header.data('link');
+	  header
+	      .find('.api')
+	      .wrapInner("<a href=\"/Unity/vrtk-wiki/docs/zinnia-api" + link + "\"></a>");
+      }
   });
 </script>
 <script type="text/javascript">
@@ -322,7 +335,7 @@ The community documentation can be found at <a href="zinnia.html">here</a>.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2019-12-04 Wed 08:30</p>
+<p class="date">Created: 2019-12-05 Thu 16:14</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

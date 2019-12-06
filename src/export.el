@@ -103,7 +103,7 @@
 	     :html-head ,html-head
 	     :with-todo-keywords nil
 	     :section-numbers nil
-	     :headline-levels 5
+	     :headline-levels 7
 	     )))
     (org-publish-project "docs" t)))
 

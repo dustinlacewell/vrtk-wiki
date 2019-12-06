@@ -442,6 +442,31 @@
 **** TODO LinkedAliasAssocationCollection
 *** TODO Collision
 **** TODO Active
+     There are a number of classes that coordinate active collision
+     tracking:
+     - [[CollisionNotifier]]: Emits events related to collisions.
+     - [[CollisionNotifier.EventData]]: Holds information related to
+       collisions.
+     - [[ActiveCollisionsContainer]]: Holds a collection of current
+       collisions raised by a [[CollisionNotifier]].
+     - [[ActiveCollisionPublisher]]: Sends collision information to
+       the things involved in collisions.
+     - [[ActiveCollisionConsumer]]: Receives collision information
+       when involved in collisions.
+
+     These classes attempt to communicate data about collisions
+     between an [[ActiveCollisionPublisher]] and any number of
+     [[ActiveCollisionConsumer]]s.
+
+     When collisions take place, a [[CollisionNotifier]]'s events can
+     be configured to add the associated
+     [[CollisionNotifier.EventData]] to an
+     [[ActiveCollisionsContainer]].
+
+     When an [[ActiveCollisionPublisher]] publishes, it searches all
+     of the objects that own colliders being tracked by the
+     [[ActiveCollisionsContainer]] for [[ActiveCollisionConsumer]]
+     components which it will pass collision data to.
 ***** TODO Event
 ****** TODO Proxy
 ******* TODO ActiveCollisionConsumerEventProxyEmitter                   :api:
@@ -454,15 +479,32 @@
 ****** TODO NearestSorter                                               :api:
 ****** TODO OrderReverser                                               :api:
 ****** TODO Slicer                                                      :api:
-***** TODO ActiveCollisionConsumer                                      :api:
-***** TODO ActiveCollisionPublisher                                     :api:
-***** TODO ActiveCollisionsContainer                                    :api:
+***** ActiveCollisionConsumer                                      :api:
+      Objects involved in collisions that feature this component will
+      recieve information about those collisions from a related
+      [[ActiveCollisionPublisher]].
+***** ActiveCollisionPublisher                                          :api:
+      Publishes itself, and relevant collision information, to any
+      [[ActiveCollisionConsumer]] components found on objects within a
+      related [[ActiveCollisionsContainer]].
+***** ActiveCollisionsContainer                                         :api:
+      Holds a collection of current collisions raised by a
+      [[CollisionNotifier]].
 ***** TODO CollisionPointContainer                                      :api:
 **** TODO Event
 ***** TODO Proxy
 ****** TODO CollisionNotifierEventProxyEmitter                          :api:
 **** TODO CollisionIgnorer                                              :api:
 **** TODO CollisionNotifier                                             :api:
+     Recieves and propagates local collision events via Unity
+     Events. The events are propagated as
+     [[CollisionNotifier.EventData]] instances.
+***** CollisionNotifier.EventData
+      Contains information about a collision:
+
+      - ~IsTrigger~ whether the collider was set to ~isTrigger~.
+      - ~CollisionData~ the Unity collision event data.
+      - ~ColliderData~ the Collider that was involved.
 **** TODO CollisionTracker                                              :api:
 *** TODO Follow
 **** TODO Modifier

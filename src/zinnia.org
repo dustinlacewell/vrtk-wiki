@@ -439,7 +439,7 @@
 **** TODO Operation
 ***** TODO Extraction
 ****** TODO PlayAreaDimensionsExtractor                                 :api:
-**** TODO LinkedAliasAssocationCollection
+**** TODO LinkedAliasAssociationCollection                              :api:
 *** TODO Collision
 **** TODO Active
      There are a number of classes that coordinate active collision

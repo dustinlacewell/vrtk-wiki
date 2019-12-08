@@ -102,6 +102,7 @@
 	     :html-format-headline-function my-html-headline-formatter
 	     :html-head ,html-head
 	     :with-todo-keywords nil
+	     :html-link-home "index.html"
 	     :section-numbers nil
 	     :headline-levels 7
 	     )))

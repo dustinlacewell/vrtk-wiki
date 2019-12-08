@@ -1,4 +1,5 @@
-* VRTK Wiki
+#+TITLE: VRTK Community Docs
+
   This is a community managed wiki about the Virtual Reality Toolkit
   by [[https://github.com/ExtendRealityLtd][ExtendRealityLtd]].
 
@@ -6,6 +7,7 @@
 
    A glossary of standard terminology used within the toolkit can be found [[file:glossary.org][here]].
 
+** Awesome Community Projects
 ** Zinnia.Unity
 
    Zinnia.Unity is a collection of single-responsibility

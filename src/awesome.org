@@ -1,0 +1,9 @@
+#+TITLE: Awesome Community Projects
+
+Here are some awesome projects managed by members of the VRTK
+community:
+* SpeedTracker
+
+https://github.com/fight4dream/Fight4Dream.Zinnia.SpeedChecker.Unity
+
+Can emit events when the velocity of an object is over a limit.
